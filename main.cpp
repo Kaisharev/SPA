@@ -1,15 +1,7 @@
 #include <iostream>
 #include <cstdlib>
-
-void clear_screen () {
-
-    #ifdef _WIN32
-        std::system ("cls");
-    #else
-        std::system  ("clear");
-    #endif
-
-}
+#include "DateTime/date.hpp"
+#include "Utils/utils.hpp"
 
 
 int main (){
