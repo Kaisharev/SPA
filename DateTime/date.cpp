@@ -17,7 +17,9 @@ Date Date::ParseDate (const std::string& date_string){
 
     if (!std::regex_match(date_string, regex_result, date_regex)){
         throw std::invalid_argument("Uneseni datum nije u ispravnom formatu!");
+
     }
+    
     
     if (!IsValidDate(
         std::stoi(regex_result[1]), 
@@ -32,12 +34,6 @@ Date Date::ParseDate (const std::string& date_string){
     );
 }
 
- std::string Date::GetDateAsString () const{
-    return std::to_string(this -> day) + "." + 
-           std::to_string(this -> month) + "." + 
-           std::to_string(this -> year);
-}
-
 Date Date::Today (){
     const auto now = std::chrono::system_clock::now();
 
@@ -49,6 +45,7 @@ Date Date::Today (){
 
     return Date(day, month, year);
 }
+
 
 // Getteri
 
@@ -64,3 +61,10 @@ int Date::GetMonth () const {
 int Date::GetYear () const {
     return this -> year;
 }
+
+std::string Date::GetDateAsString () const{
+    return std::to_string(this -> day) + "." + 
+           std::to_string(this -> month) + "." + 
+           std::to_string(this -> year);
+}
+

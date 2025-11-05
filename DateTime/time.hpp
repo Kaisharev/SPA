@@ -6,12 +6,12 @@ class Time {
         int minute; 
         int second;
         
-        static bool IsValdTime (int h, int m, int s);
+        Time (int h, int m, int s) : hour (h), minute (m), second (s){};
+        static bool IsValidTime (int h, int m, int s);
         int ConcatenateTime ();
-        Time();
 
     public: 
-        static Time ParseTime(const std::string& TimeString);
+        static Time ParseTime(const std::string& time_string);
         static Time CurrentTime();
 
         // Getteri
@@ -22,3 +22,5 @@ class Time {
         std::string GetTimeAsString () const;
 
 };
+
+
