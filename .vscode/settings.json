@@ -53,6 +53,9 @@
     "sstream": "cpp",
     "variant": "cpp",
     "bitset": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "filesystem": "cpp",
+    "fstream": "cpp",
+    "codecvt": "cpp"
   }
 }

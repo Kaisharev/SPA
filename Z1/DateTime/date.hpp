@@ -18,14 +18,30 @@ class Date {
         }
         
     public:
+        Date ();
         static Date ParseDate (const std::string& date_string);
         static Date Today();
         // Geteri
 
-        int GetDay () const;
-        int GetMonth () const;
-        int GetYear () const;
-        std::string GetDateAsString () const;
+
+        int GetDay () const {
+            return this -> day;
+        }
+        
+        
+        int GetMonth () const {
+            return this -> month;
+        }
+        
+        int GetYear () const {
+            return this -> year;
+        }
+        
+        std::string GetDateAsString () const{
+            return std::to_string(this -> day) + "." + 
+                   std::to_string(this -> month) + "." + 
+                   std::to_string(this -> year);
+        }
 
         // Operatori poređenja
         bool operator == (const Date& other) const {

@@ -11,15 +11,34 @@ class Time {
         int ConcatenateTime ();
 
     public: 
+        Time();
         static Time ParseTime(const std::string& time_string);
         static Time CurrentTime();
 
         // Getteri
+        int GetHour () const {
+            return this -> hour;
+        }
+        
+        int GetMinute () const {
+            return this -> minute;
+        }
+        
+        int GetSecond () const {
+            return this -> second;
+        }
+        
+        std::string GetTimeAsString () const {
+            return std::to_string(this -> hour) + ":" + std::to_string (this -> minute) + ":" + std::to_string (this -> second);
+        }
+        
 
-        int GetHour () const;
-        int GetMinute () const;
-        int GetSecond () const;
-        std::string GetTimeAsString () const;
+        bool operator== (const Time& other) const;
+        bool operator!= (const Time& other) const;
+        bool operator< (const Time& other) const;
+        bool operator<= (const Time& other) const;
+        bool operator> (const Time& other) const;
+        bool operator>= (const Time& other) const;
 
 };
 

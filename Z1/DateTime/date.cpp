@@ -3,6 +3,9 @@
 #include <regex>
 #include <stdexcept>
 
+Date::Date() {
+    *this = Date::Today();
+}
 bool Date::IsValidDate (int d, int m, int y){
     auto day = std::chrono::day(static_cast<unsigned>(d));
     auto month = std::chrono::month (static_cast<unsigned>(m));
@@ -47,24 +50,5 @@ Date Date::Today (){
 }
 
 
-// Getteri
 
-int Date::GetDay () const {
-    return this -> day;
-}
-
-
-int Date::GetMonth () const {
-    return this -> month;
-}
-
-int Date::GetYear () const {
-    return this -> year;
-}
-
-std::string Date::GetDateAsString () const{
-    return std::to_string(this -> day) + "." + 
-           std::to_string(this -> month) + "." + 
-           std::to_string(this -> year);
-}
 

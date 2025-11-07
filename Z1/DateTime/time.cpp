@@ -3,6 +3,11 @@
 #include <stdexcept>
 #include <chrono>
 
+Time::Time() {
+    // Initialize to the current time
+    *this = Time::CurrentTime();
+}
+
 bool Time::IsValidTime(int h, int m, int s)
 {
     return (h >= 0 && h <= 23) &&
@@ -18,8 +23,8 @@ int Time::ConcatenateTime (){
 }
 
 Time Time::ParseTime (const std::string& time_string){
-    std::regex time_regex("[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]{1,3})?");
-    std::smatch regex_result;
+    std::regex time_regex("([0-9]{2}):([0-9]{2}):([0-9]{2})(\\.[0-9]{1,3})?");
+       std::smatch regex_result;
 
     if (!std::regex_match(time_string, regex_result, time_regex)){
         throw std::invalid_argument("Uneseno vrijeme nije u ispravnom formatu (HH:MM:SS)");
@@ -47,4 +52,30 @@ Time Time::CurrentTime () {
         static_cast<int>(time_of_day.minutes().count()),
         static_cast<int>(time_of_day.seconds().count())
     );
+}
+
+bool Time::operator==(const Time& other) const {
+    return hour == other.hour && minute == other.minute && second == other.second;
+}
+
+bool Time::operator!=(const Time& other) const {
+    return !(*this == other);
+}
+
+bool Time::operator<(const Time& other) const {
+    if (hour != other.hour) return hour < other.hour;
+    if (minute != other.minute) return minute < other.minute;
+    return second < other.second;
+}
+
+bool Time::operator<=(const Time& other) const {
+    return *this < other || *this == other;
+}
+
+bool Time::operator>(const Time& other) const {
+    return !(*this <= other);
+}
+
+bool Time::operator>=(const Time& other) const {
+    return !(*this < other);
 }

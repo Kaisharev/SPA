@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "DateTime/date.hpp"
 #include "Utils/utils.hpp"
-
+#include "Entry/DiaryEntry.hpp"
 /*
 int main (){
     while (true) { 
@@ -65,6 +65,7 @@ int main() {
         std::cerr << "GREŠKA: " << e.what() << "\n";
         return 1;
     }
-    
-    return 0;
+
+        
+        return 0;
 }
