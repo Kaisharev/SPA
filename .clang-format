@@ -4,7 +4,7 @@ Standard: Latest
 
 ColumnLimit: 135
 
-AccessModifierOffset: -4
+IndentAccessModifiers: true
 IndentWidth: 4
 UseTab: Never
 

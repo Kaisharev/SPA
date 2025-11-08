@@ -1,158 +1,169 @@
 #pragma once
 #include <iostream>
 
-#include "../Entry/DiaryEntry.hpp"
-
 template <typename T>
 struct Node {
-    T data;
-    Node<T>* next;
+        T data;
+        Node<T>* next;
 
-    Node (T value) : data (value), next (nullptr) {}
+        Node (T value) : data (value), next (nullptr) {}
 };
 
 template <typename T>
 class LinkedList {
-private:
-    Node<T>* head;
-    Node<T>* tail;
+    private:
+        Node<T>* head;
+        Node<T>* tail;
+        int size;
 
-public:
-    LinkedList () : head (nullptr), tail (nullptr) {}
+    public:
+        LinkedList () : head (nullptr), tail (nullptr), size (0) {}
 
-    ~LinkedList () {
-        while (head != nullptr) {
-            pop_front ();
-        }
-    }
-
-    void InsertFront (T value) {
-        Node<T>* new_node = new Node<T> (value);
-        new_node->next = head;
-
-        head = new_node;
-
-        if (tail == nullptr) tail = new_node;
-    }
-
-    void InsertBack (T value) {
-        Node<T>* new_node = new Node<T> (value);
-        if (head == nullptr) {
-            head = tail = new_node;
-            return;
+        ~LinkedList () {
+            while (head != nullptr) {
+                RemoveFront ();
+            }
         }
 
-        tail->next = new_node;
-        tail = new_node;
-    }
+        void InsertFront (T value) {
+            Node<T>* new_node = new Node<T> (value);
+            new_node->next = head;
 
-    void InsertAt (int index, T value) {
-        Node<T>* temp = head;
-        Node<T>* new_node = new Node<T> (value);
+            head = new_node;
 
-        for (int i = 0; temp != nullptr && i < index - 1; i++) {
-            temp = temp->next;
+            if (tail == nullptr) tail = new_node;
+            size++;
         }
 
-        if (temp->next == nullptr) {
-            throw std::invalid_argument ("Uneseni indeks ne postoji u listi!");
-        }
-        new_node->next = temp->next;
-        temp->next = new_node;
-    }
+        void InsertBack (T value) {
+            Node<T>* new_node = new Node<T> (value);
+            if (head == nullptr) {
+                head = tail = new_node;
+                return;
+            }
 
-    void RemoveFront () {
-        if (head == nullptr) {
-            return;
-        }
-
-        Node<T>* temp = head;
-        head = temp->next;
-
-        if (head == nullptr) {
-            tail = nullptr;
-        }
-        delete temp;
-    }
-
-    void RemoveBack () {
-        if (head == tail) {
-            delete head;
-            head = tail = nullptr;
-            return;
-        }
-        Node<T>* temp = head;
-
-        while (temp->next != tail) {
-            temp = temp->next;
+            tail->next = new_node;
+            tail = new_node;
+            size++;
         }
 
-        delete tail;
-        tail = temp;
-        tail->next = nullptr;
-    }
+        void InsertAt (int index, T value) {
+            Node<T>* temp = head;
+            Node<T>* new_node = new Node<T> (value);
 
-    void RemoveAt (int index) {
-        if (head == nullptr || index < 0) {
-            throw std::invalid_argument ("Lista je prazna ili ste unijeli negativan indeks!");
-        }
-        if (index == 0) {
-            RemoveFront ();
-            return;
-        }
+            for (int i = 0; temp != nullptr && i < index - 1; i++) {
+                temp = temp->next;
+            }
 
-        Node<T>* temp = head;
-
-        for (int i = 0; temp != nullptr && i < index - 1; ++i) {
-            temp = temp->next;
+            if (temp->next == nullptr) {
+                throw std::invalid_argument ("Uneseni indeks ne postoji u listi!");
+            }
+            new_node->next = temp->next;
+            temp->next = new_node;
+            size++;
         }
 
-        if (temp == nullptr || temp->next == nullptr) {
-            throw std::out_of_range ("Indeks van opsega!");
+        void RemoveFront () {
+            if (head == nullptr) {
+                return;
+            }
+
+            Node<T>* temp = head;
+            head = temp->next;
+
+            if (head == nullptr) {
+                tail = nullptr;
+            }
+            delete temp;
+            size--;
         }
-        Node<T>* node_to_delete = temp->next;
-        if (node_to_delete == tail) {
+
+        void RemoveBack () {
+            if (head == tail) {
+                delete head;
+                head = tail = nullptr;
+                return;
+            }
+            Node<T>* temp = head;
+
+            while (temp->next != tail) {
+                temp = temp->next;
+            }
+
+            delete tail;
             tail = temp;
+            tail->next = nullptr;
+            size--;
         }
-        temp->next = node_to_delete->next;
-        delete node_to_delete;
-    }
 
-    bool IsEmpty () const {
-        return head == nullptr;
-    }
+        void RemoveAt (int index) {
+            if (head == nullptr || index < 0) {
+                throw std::invalid_argument ("Lista je prazna ili ste unijeli negativan indeks!");
+            }
+            if (index == 0) {
+                RemoveFront ();
+                return;
+            }
 
-    T GetFirstElement () const {
-        if (!IsEmpty ()) {
+            Node<T>* temp = head;
+
+            for (int i = 0; temp != nullptr && i < index - 1; ++i) {
+                temp = temp->next;
+            }
+
+            if (temp == nullptr || temp->next == nullptr) {
+                throw std::out_of_range ("Indeks van opsega!");
+            }
+            Node<T>* node_to_delete = temp->next;
+            if (node_to_delete == tail) {
+                tail = temp;
+            }
+            temp->next = node_to_delete->next;
+            delete node_to_delete;
+            size--;
+        }
+
+        bool IsEmpty () const {
+            return head == nullptr;
+        }
+
+        T GetFirstElement () const {
+            if (IsEmpty ()) {
+                throw std::runtime_error ("Lista je prazna!");
+            }
             return head->data;
         }
 
-        std::cerr << "Greska: Pokusaj citanja iz prazne liste!" << std::endl;
-        exit (1);
-    }
+        void AddSorted (T value) {
+            Node<T>* newNode = new Node<T> (value);
 
-    void AddSorted (T value) {
-        Node<T>* newNode = new Node<T> (value);
-
-        if (IsEmpty () || value < head->data) {
-            newNode->next = head;
-            head = newNode;
-            if (tail == nullptr) {
-                tail = head;
+            if (IsEmpty () || value < head->data) {
+                newNode->next = head;
+                head = newNode;
+                if (tail == nullptr) {
+                    tail = head;
+                }
+                return;
             }
-            return;
+
+            Node<T>* temp = head;
+            while (temp->next != nullptr && temp->next->data < value) {
+                temp = temp->next;
+            }
+
+            newNode->next = temp->next;
+            temp->next = newNode;
+
+            if (newNode->next == nullptr) {
+                tail = newNode;
+            }
         }
 
-        Node<T>* temp = head;
-        while (temp->next != nullptr && temp->next->data < value) {
-            temp = temp->next;
+        bool IsEmpty () const {
+            return head == nullptr;
         }
 
-        newNode->next = temp->next;
-        temp->next = newNode;
-
-        if (newNode->next == nullptr) {
-            tail = newNode;
+        int GetSize () const {
+            return size;
         }
-    }
 };
