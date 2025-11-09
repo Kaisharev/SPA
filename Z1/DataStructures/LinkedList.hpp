@@ -166,4 +166,45 @@ class LinkedList {
         int GetSize () const {
             return size;
         }
+
+        class Iterator {
+            private:
+                Node<T>* current;
+
+            public:
+                Iterator (Node<T>* node) : current (node) {}
+
+                T& operator* () {
+                    return current->data;
+                }
+
+                Iterator& operator++ () {
+                    if (current != nullptr) {
+                        current = current->next;
+                    }
+                    return *this;
+                }
+
+                Iterator operator++ (int) {
+                    Iterator temp = *this;
+                    ++(*this);
+                    return temp;
+                }
+
+                bool operator== (const Iterator& other) const {
+                    return current == other.current;
+                }
+
+                bool operator!= (const Iterator& other) const {
+                    return current != other.current;
+                }
+        };
+
+        Iterator begin () {
+            return Iterator (head);
+        }
+
+        Iterator end () {
+            return Iterator (nullptr);
+        }
 };

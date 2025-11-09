@@ -1,4 +1,3 @@
-// Diary.hpp
 #pragma once
 
 #include <string>

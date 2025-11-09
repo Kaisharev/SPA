@@ -22,9 +22,9 @@ class Stack {
             if (IsEmpty ()) {
                 throw std::runtime_error ("Stek je prazan!");
             }
-            list.GetFirstElement ();
+            return list.GetFirstElement ();
         };
-        bool IsEmpty const {
+        bool IsEmpty () const {
             return list.IsEmpty ();
         }
         int getSize () const {

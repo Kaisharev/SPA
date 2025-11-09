@@ -9,7 +9,6 @@ class PriorityQueue {
         int capacity;
         int size;
 
-        // Pomoćne funkcije za navigaciju
         int Parent (int i) const {
             return (i - 1) / 2;
         }
@@ -117,7 +116,6 @@ class PriorityQueue {
             size--;
             heap[0] = heap[size];
 
-            // Popravi heap
             if (size > 0) {
                 HeapifyDown (0);
             }

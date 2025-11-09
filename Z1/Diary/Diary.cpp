@@ -1,20 +1,17 @@
-// Diary.cpp
 #include "Diary.hpp"
 
 #include <algorithm>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <ranges>
 #include <sstream>
-
-
+#include <string_view>
 
 Diary& Diary::GetInstance () {
-    static Diary instance;  
+    static Diary instance;
     return instance;
 }
-
-
 
 Diary::Diary () : index_file ("dnevnik.txt"), entries_directory ("unosi/"), next_id (1) {
     std::filesystem::create_directories (entries_directory);
@@ -30,16 +27,40 @@ Diary::~Diary () {
     }
 }
 
-
 void Diary::LoadFromFile () {
     std::fstream index (index_file);
-    if (!index.is_open()){
-        std::cout << "Prazan dnecni"
+    if (!index.is_open ()) {
+        std::cout << "Prazan dnevnik" << std::endl;
+        return;
     }
+
+    std::string current_line;
+    while (std::getline (index, current_line)) {
+        if (current_line.empty ()) continue;
+
+        try {
+            DiaryEntry entry = ParseIndexLine (current_line);
+            if (entry.GetID () >= next_id) {
+                next_id = entry.GetID () + 1;
+            }
+        } catch (const std::exception e) {
+            std::cerr << "Greška " << e.what () << " pri parsiranju linije - " << current_line << std::endl;
+        }
+    }
+
+    index.close ();
 }
 
 void Diary::SaveIndexFile () {
-    // TODO: Implementiraj čuvanje u index fajl
+    std::ofstream output_file (index_file, std::ios::trunc);
+    if (!output_file.is_open ()) {
+        throw std::runtime_error ("Ne mogu otvoriti index fajl!");
+    }
+
+    for (const auto& entry : entries) {
+        output_file << EntryToIndexLine (entry) << "\n";
+    }
+    output_file.close ();
 }
 
 void Diary::SaveEntryContent (const DiaryEntry& entry) {
@@ -52,21 +73,47 @@ std::string Diary::LoadEntryContent (const std::string& filename) {
 }
 
 DiaryEntry Diary::ParseIndexLine (const std::string& line) {
-    // TODO: Implementiraj parsiranje linije iz index fajla
-    // Format: ID|Prioritet|Datum|Vrijeme|Kratak_Opis|Ime_Fajla
+    int id, priority;
+    Date date;
+    Time time;
+    std::string short_description, file_name;
 
-    // Privremeno vraćam dummy objekat
-    return DiaryEntry (0, 0, Date::Today (), Time::CurrentTime (), "", "", "");
+    int index = 0;
+    auto split_view = std::views::split (line, '|');
+
+    try {
+        for (const auto subrange : split_view) {
+            std::string sub_string (subrange.begin (), subrange.end ());
+            switch (index) {
+                case 0:
+                    id = std::stoi (sub_string);
+                    break;
+                case 1:
+                    priority = std::stoi (sub_string);
+                    break;
+                case 2:
+                    date.ParseDate (sub_string);
+                    break;
+                case 3:
+                    time.ParseTime (sub_string);
+                    break;
+                case 4:
+                    short_description = sub_string;
+                    break;
+                case 5:
+                    file_name = sub_string;
+                    break;
+            }
+        }
+    } catch (std::invalid_argument& e) {
+        std::cerr << "Neispravan format: " << e.what () << std::endl;
+    }
+    return DiaryEntry (id, priority, date, time, short_description, file_name);
 }
 
 std::string Diary::EntryToIndexLine (const DiaryEntry& entry) {
-    // TODO: Implementiraj formatiranje u liniju za index
-    return "";
+    return entry.GetStringifiedEntry ();
 }
-
-// ====================================================================
-// PUBLIC INTERFACE
-// ====================================================================
 
 void Diary::AddEntry (int priority, const Date& date, const Time& time, const std::string& short_description,
                       const std::string& entry_text) {

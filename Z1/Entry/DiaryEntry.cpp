@@ -1,6 +1,6 @@
 #include "DiaryEntry.hpp"
 
-std::string DiaryEntry::GetStringifiedEntry () {
+std::string DiaryEntry::GetStringifiedEntry () const {
     return "ID: " + std::to_string (this->id) + " | " + "Prioritet: " + std::to_string (this->priority) + " | " +
            "Datum: " + this->date.GetDateAsString () + " | " + "Vrijeme:" + this->time.GetTimeAsString () + " | " +
            "Kratak Opis:" + this->short_description;
