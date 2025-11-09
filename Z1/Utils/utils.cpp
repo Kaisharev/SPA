@@ -6,3 +6,4 @@ void clear_screen () {
     std::system ("clear");
 #endif
 }
+const int MAX_ENTRIES = 5;

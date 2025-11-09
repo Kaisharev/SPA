@@ -1,7 +1,10 @@
 #pragma once
 
+#include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <ranges>
 #include <string>
-#include <vector>
 
 #include "../DataStructures/LinkedList.hpp"
 #include "../DataStructures/PriorityQueue.hpp"
@@ -9,7 +12,7 @@
 #include "../DateTime/Date.hpp"
 #include "../DateTime/Time.hpp"
 #include "../Entry/DiaryEntry.hpp"
-
+#include "../Utils/utils.hpp"
 class Diary {
     private:
         Diary ();
@@ -17,7 +20,8 @@ class Diary {
         Diary (const Diary&) = delete;
         Diary& operator= (const Diary&) = delete;
 
-        LinkedList<DiaryEntry> entries;
+        LinkedList<DiaryEntry> all_entries;
+        LinkedList<DiaryEntry> current_entries;
         Stack<DiaryEntry> undo_stack;
 
         std::string index_file;
@@ -31,6 +35,7 @@ class Diary {
 
         DiaryEntry ParseIndexLine (const std::string& line);
         std::string EntryToIndexLine (const DiaryEntry& entry);
+        bool ValidateEntry (int priority, std::string short_description, std::string entry_text) const;
 
     public:
         static Diary& GetInstance ();

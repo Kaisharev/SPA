@@ -5,7 +5,6 @@ std::string DiaryEntry::GetStringifiedEntry () const {
            "Datum: " + this->date.GetDateAsString () + " | " + "Vrijeme:" + this->time.GetTimeAsString () + " | " +
            "Kratak Opis:" + this->short_description;
 }
-
 int DiaryEntry::CompareTo (const DiaryEntry& other) const {
     if (this->date < other.date) return -1;
     if (this->date > other.date) return 1;
@@ -14,22 +13,7 @@ int DiaryEntry::CompareTo (const DiaryEntry& other) const {
     if (this->time < other.time) return -1;
     if (this->time > other.time) return 1;
 
-    return 0;  // Potpuno isti datum i vreme
-}
-
-bool DiaryEntry::operator< (const DiaryEntry& other) const {
-    if (this->priority != other.priority) {
-        return this->priority < other.priority;
-    }
-
-    return this->CompareTo (other) < 0;
-}
-
-bool DiaryEntry::operator> (const DiaryEntry& other) const {
-    if (this->priority != other.priority) {
-        return this->priority > other.priority;
-    }
-    return CompareTo (other) > 0;
+    return 0;
 }
 
 std::string DiaryEntry::LoadEntryFromFile () {
@@ -50,4 +34,27 @@ std::string DiaryEntry::LoadEntryFromFile () {
     return content;
 }
 
-// TODO dodati komparatore > < kao i komparacije po datumima
+std::string DiaryEntry::GetEntryText () const {
+    return entry_text;
+}
+
+std::string DiaryEntry::GetFileName () const {
+    return file_name;
+}
+Date DiaryEntry::GetDate () const {
+    return date;
+}
+bool DiaryEntry::operator< (const DiaryEntry& other) const {
+    if (this->priority != other.priority) {
+        return this->priority < other.priority;
+    }
+
+    return this->CompareTo (other) < 0;
+}
+bool DiaryEntry::operator> (const DiaryEntry& other) const {
+    if (this->priority != other.priority) {
+        return this->priority > other.priority;
+    }
+
+    return this->CompareTo (other) > 0;
+}

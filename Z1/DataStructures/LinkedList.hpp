@@ -46,7 +46,14 @@ class LinkedList {
             tail = new_node;
             size++;
         }
-
+        template <typename Func>
+        void ForEach (Func func) const {
+            Node<T>* current = head;
+            while (current != nullptr) {
+                func (current->data);  // Poziva lambdu za svaki element
+                current = current->next;
+            }
+        }
         void InsertAt (int index, T value) {
             Node<T>* temp = head;
             Node<T>* new_node = new Node<T> (value);
@@ -134,6 +141,13 @@ class LinkedList {
             return head->data;
         }
 
+        T GetLastElement () const {
+            if (IsEmpty ()) {
+                throw std::runtime_error ("Lista je prazna!");
+            }
+            return tail->data;
+        }
+
         void AddSorted (T value) {
             Node<T>* newNode = new Node<T> (value);
 
@@ -159,11 +173,7 @@ class LinkedList {
             }
         }
 
-        bool IsEmpty () const {
-            return head == nullptr;
-        }
-
-        int GetSize () const {
+            int GetSize () const {
             return size;
         }
 

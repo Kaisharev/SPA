@@ -1,104 +1,110 @@
-#include <cstdlib>
-#include <iostream>
+#include "Diary/Diary.hpp"
 
-#include "DateTime/date.hpp"
-#include "Entry/DiaryEntry.hpp"
-#include "Utils/utils.hpp"
-/*
-int main (){
+int main () {
+    Diary& diary = Diary::GetInstance ();
+
     while (true) {
         int option = 0;
         do {
-            std::cout << "D N E V N I K"<<std::endl;
-            std::cout << "Odaberite opcije: \n1. Unos novog entrya\n2. Brisanje poslednjeg unosa\n3. Prikaz 5 najprioritetnijih
-unosa\n4. Pregled dnevnika"<<std::endl; std::cout << "Unesite jednu od opcija: "<<std::endl; std::cin >> option; clear_screen(); }
-while (option < 1 || option > 4);
-    }
+            std::cout << "\n╔════════════════════════════════════╗\n";
+            std::cout << "║        D N E V N I K              ║\n";
+            std::cout << "╚════════════════════════════════════╝\n";
+            std::cout << "1. Unos novog entrya\n";
+            std::cout << "2. Brisanje posljednjeg unosa\n";
+            std::cout << "3. Prikaz 5 najprioritetnijih unosa\n";
+            std::cout << "4. Pregled dnevnika\n";
+            std::cout << "0. Izlaz\n";
+            std::cout << "────────────────────────────────────\n";
+            std::cout << "Izaberite opciju: ";
+            std::cin >> option;
+            clear_screen ();
+        } while (option < 0 || option > 4);
 
-
-
-}*/
-
-int main () {
-    try {
-        // Test 1: Parsiranje validnog datuma
-        Date d1 = Date::ParseDate ("04.11.2025");
-        std::cout << "Datum 1: " << d1.GetDateAsString () << "\n";
-
-        // Test 2: Različiti separatori
-        Date d2 = Date::ParseDate ("1/10/2025");
-        Date d3 = Date::ParseDate ("15-12-2024");
-        std::cout << "Datum 2: " << d2.GetDateAsString () << "\n";
-        std::cout << "Datum 3: " << d3.GetDateAsString () << "\n";
-
-        // Test 3: Trenutni datum
-        Date today = Date::Today ();
-        std::cout << "Danas: " << today.GetDateAsString () << "\n";
-
-        // Test 4: Poređenje
-        if (d1 > d3) {
-            std::cout << d1.GetDateAsString () << " je noviji od " << d3.GetDateAsString () << "\n";
-        }
-
-        // Test 5: Getteri
-        std::cout << "Dan: " << d1.GetDay () << ", "
-                  << "Mesec: " << d1.GetMonth () << ", "
-                  << "Godina: " << d1.GetYear () << "\n";
-
-        // Test 6: Neispravan datum (bacit će exception)
         try {
-            Date invalid = Date::ParseDate ("32.13.2025");
-        } catch (const std::invalid_argument& e) {
-            std::cout << "Uhvaćena greška: " << e.what () << "\n";
+            switch (option) {
+                case 1: {
+                    // Unos novog entry-a
+                    int priority;
+                    std::string date_str, time_str, short_desc, full_text;
+
+                    std::cout << "Prioritet (1-10): ";
+                    std::cin >> priority;
+                    std::cin.ignore ();
+
+                    std::cout << "Datum (DD.MM.YYYY) ili Enter za danas: ";
+                    std::getline (std::cin, date_str);
+
+                    std::cout << "Vrijeme (HH:MM:SS) ili Enter za sada: ";
+                    std::getline (std::cin, time_str);
+
+                    std::cout << "Kratak opis: ";
+                    std::getline (std::cin, short_desc);
+
+                    std::cout << "Pun tekst (završite sa '.' u novom redu):\n";
+                    std::string line;
+                    while (std::getline (std::cin, line) && line != ".") {
+                        full_text += line + "\n";
+                    }
+
+                    Date date = date_str.empty () ? Date::Today () : Date::ParseDate (date_str);
+                    Time time = time_str.empty () ? Time::CurrentTime () : Time::ParseTime (time_str);
+
+                    diary.AddEntry (priority, date, time, short_desc, full_text);
+                    std::cout << "\n✓ Unos uspješno dodan!\n";
+                    break;
+                }
+
+                case 2: {
+                    diary.DeleteLastEntry ();
+                    break;
+                }
+
+                case 3: {
+                    diary.ShowTop5Priority ();
+                    break;
+                }
+
+                case 4: {
+                    // Pregled dnevnika
+                    std::cout << "1. Svi unosi\n";
+                    std::cout << "2. Po datumu\n";
+                    std::cout << "3. Po opsegu datuma\n";
+                    int sub_option;
+                    std::cin >> sub_option;
+                    std::cin.ignore ();
+
+                    if (sub_option == 2) {
+                        std::cout << "Unesite datum (DD.MM.YYYY): ";
+                        std::string date_str;
+                        std::getline (std::cin, date_str);
+                        Date date = Date::ParseDate (date_str);
+                        diary.ShowEntriesForDate (date);
+                    } else if (sub_option == 3) {
+                        std::cout << "Od datuma (DD.MM.YYYY): ";
+                        std::string from_str;
+                        std::getline (std::cin, from_str);
+                        std::cout << "Do datuma (DD.MM.YYYY): ";
+                        std::string to_str;
+                        std::getline (std::cin, to_str);
+                        Date from = Date::ParseDate (from_str);
+                        Date to = Date::ParseDate (to_str);
+                        diary.ShowEntriesByDateRange (from, to);
+                    }
+                    break;
+                }
+
+                case 0: {
+                    std::cout << "Doviđenja!\n";
+                    return 0;
+                }
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "GREŠKA: " << e.what () << std::endl;
         }
 
-        // Test 7: Neispravan format
-        try {
-            Date badFormat = Date::ParseDate ("04-Nov-2025");
-        } catch (const std::invalid_argument& e) {
-            std::cout << "Uhvaćena greška: " << e.what () << "\n";
-        }
-    } catch (const std::exception& e) {
-        std::cerr << "GREŠKA: " << e.what () << "\n";
-        return 1;
+        std::cout << "\nPritisnite Enter za nastavak...";
+        std::cin.ignore ();
+        std::cin.get ();
+        clear_screen ();
     }
-
-    int id;
-    int priority;
-    std::string date_string, time_string;
-    std::string short_description;
-    std::string entry_text;
-    std::string file_name;
-
-    std::cout << "Unesite prioritet" << std::endl;
-    std::cin >> priority;
-    std::cin.ignore (std::numeric_limits<std::streamsize>::max (), '\n');
-
-    std::cout << "Unesite datum (DD-MM-YYYY; DD/MM/YYYY; DD.MM.YYYY) ili pritisnite enter za današnji dan" << std::endl;
-    std::getline (std::cin, date_string);
-    std::cout << "Unesite vrijeme (HH:MM:SS) ili pritisnite enter za trenutno vrijeme" << std::endl;
-    std::getline (std::cin, time_string);
-    std::cout << "Unesite kratak opis" << std::endl;
-    std::getline (std::cin, short_description);
-    std::cout << "Unesite potpun opis" << std::endl;
-    std::getline (std::cin, entry_text);
-    std::cout << "Unesite ime fajla" << std::endl;
-    std::getline (std::cin, file_name);
-
-    Date date;
-    Time time;
-    if (date_string.empty ()) {
-        date = Date::Today ();
-        time = Time::CurrentTime ();
-    } else {
-        date = Date::ParseDate (date_string);
-        time = Time::ParseTime (time_string);
-    }
-    file_name += ".txt";
-
-    DiaryEntry entry (id, priority, date, time, short_description, entry_text, file_name);
-    std::string e_string = entry.GetStringifiedEntry ();
-    std::cout << e_string << std::endl;
-    std::cout << entry.LoadEntryFromFile () << std::endl;
-    return 0;
 }

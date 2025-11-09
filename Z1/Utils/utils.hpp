@@ -7,3 +7,4 @@ void swap_items (T& a, T& b) {
     a = b;
     b = temp;
 }
+extern const int MAX_ENTRIES;

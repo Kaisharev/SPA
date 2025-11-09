@@ -56,6 +56,7 @@
     "regex": "cpp",
     "filesystem": "cpp",
     "fstream": "cpp",
-    "codecvt": "cpp"
+    "codecvt": "cpp",
+    "ranges": "cpp"
   }
 }

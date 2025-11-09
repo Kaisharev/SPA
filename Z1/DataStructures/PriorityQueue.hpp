@@ -33,7 +33,7 @@ class PriorityQueue {
         }
 
         void HeapifyUp (int index) {
-            while (index > 0 && *heap[Parent (index)] < *heap[index]) {
+            while (index > 0 && heap[Parent (index)] < heap[index]) {
                 T temp = heap[index];
                 heap[index] = heap[Parent (index)];
                 heap[Parent (index)] = temp;
@@ -47,12 +47,11 @@ class PriorityQueue {
             int left = LeftChild (index);
             int right = RightChild (index);
 
-            // Pronađi najveći element
-            if (left < size && *heap[left] > *heap[maxIndex]) {
+            if (left < size && heap[left] > heap[maxIndex]) {
                 maxIndex = left;
             }
 
-            if (right < size && *heap[right] > *heap[maxIndex]) {
+            if (right < size && heap[right] > heap[maxIndex]) {
                 maxIndex = right;
             }
 

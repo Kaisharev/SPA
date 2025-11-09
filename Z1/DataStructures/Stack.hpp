@@ -31,6 +31,8 @@ class Stack {
             return list.GetSize ();
         };
         void clear () {
-
+            while (!IsEmpty ()) {
+                pop ();
+            }
         };
 };
