@@ -9,8 +9,8 @@ int main () {
         int option = 0;
         do {
             std::cout << "\n||====================================||\n";
-            std::cout << "||        D N E V N I K              ||\n";
-            std::cout << "╚====================================╝\n";
+            std::cout << "||        D N E V N I K               ||\n";
+            std::cout << "||====================================||\n";
             std::cout << "1. Unos novog entrya\n";
             std::cout << "2. Brisanje posljednjeg unosa\n";
             std::cout << "3. Prikaz 5 najprioritetnijih unosa\n";
