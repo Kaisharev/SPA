@@ -1,0 +1,1 @@
+Ala sam se namucio oko gluposti... Lifehack, ne implementiraj regex ako nemas sve safeguarde implementirane

@@ -1,2 +1,14 @@
-ID: 2 | Prioritet: 3 | Datum: 9.11.2025 | Vrijeme:18:3:51 | Kratak Opis:Lorem Ipsum Dolor Sit Amet
-ID: 3 | Prioritet: 8 | Datum: 14.2.2005 | Vrijeme:13:55:8 | Kratak Opis:Rodjen mali Kaisharev
+1 | 10 | 9.11.2025 | 22:24:57 | Block Out je... | unos1.txt
+2 | 1 | 9.11.2025 | 6:30:15 | Studentski Centar "Nikola Tesla" | unos2.txt
+3 | 6 | 1.10.2025 | 8:8:15 | A new beginning | unos3.txt
+5 | 10 | 15.10.2025 | 9:0:0 | NOVI ALBUM | unos5.txt
+6 | 8 | 9.11.2025 | 22:34:5 | Smorih se ko plovak | unos6.txt
+7 | 3 | 9.11.2025 | 13:30:0 | Podcast sa Nikolom Suvajcem | unos7.txt
+8 | 6 | 10.11.2025 | 23:42:0 | Tezak slucaj pakla | unos8.txt
+9 | 5 | 14.2.2005 | 13:55:0 | Guess what?! I'm born! | unos9.txt
+10 | 1 | 10.11.2025 | 8:45:41 | Propustih menzu | unos10.txt
+12 | 2 | 10.11.2025 | 10:10:26 | Marčelo | unos12.txt
+11 | 7 | 30.10.2025 | 23:53:39 | HOLY COW | unos11.txt
+14 | 4 | 12.3.2005 | 9:18:10 | Ne mora se datum unositi samo sa tackama | unos14.txt
+13 | 8 | 10.11.2025 | 9:15:49 | Opis mora imati barem 10 karaktera! | unos13.txt
+15 | 2 | 10.11.2025 | 9:23:18 | Mogu raditi samo undo radnju na onim unosima koje sam unio pri trenutnom pokretanju programa! | unos15.txt

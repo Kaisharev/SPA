@@ -30,6 +30,7 @@ class DiaryEntry {
             , entry_text (entry_text)
             , file_name (file_name) {};
 
+        std::string GetIndexFormat () const;
         std::string GetStringifiedEntry () const;
         std::string GetEntryText () const;
         std::string GetFileName () const;

@@ -1,0 +1,1 @@
+Kratak opis mora imati barem 10 karaktera, dok potpuni opis mora biti duzi od kratkog opisa. Dalje, postoje safeguardi za validacjiu svega ostalog, ali mrsko mi je sada kucati primjer za svaki; izbacice invalid argument.

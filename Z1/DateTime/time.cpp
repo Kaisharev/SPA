@@ -18,7 +18,7 @@ int Time::ConcatenateTime () {
 }
 
 Time Time::ParseTime (const std::string& time_string) {
-    std::regex time_regex ("([0-9]{2}):([0-9]{2}):([0-9]{2})(\\.[0-9]{1,3})?");
+    std::regex time_regex ("([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(\\.[0-9]{1,3})?");
     std::smatch regex_result;
 
     if (!std::regex_match (time_string, regex_result, time_regex)) {

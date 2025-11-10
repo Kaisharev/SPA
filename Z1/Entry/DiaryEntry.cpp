@@ -2,9 +2,15 @@
 
 std::string DiaryEntry::GetStringifiedEntry () const {
     return "ID: " + std::to_string (this->id) + " | " + "Prioritet: " + std::to_string (this->priority) + " | " +
-           "Datum: " + this->date.GetDateAsString () + " | " + "Vrijeme:" + this->time.GetTimeAsString () + " | " +
-           "Kratak Opis:" + this->short_description;
+           "Datum: " + this->date.GetDateAsString () + " | " + "Vrijeme: " + this->time.GetTimeAsString () + " | " +
+           "Kratak Opis: " + this->short_description;
 }
+
+std::string DiaryEntry::GetIndexFormat () const {
+    return std::to_string (this->id) + " | " + std::to_string (this->priority) + " | " + this->date.GetDateAsString () + " | " +
+           this->time.GetTimeAsString () + " | " + this->short_description + " | " + this->file_name;
+}
+
 int DiaryEntry::CompareTo (const DiaryEntry& other) const {
     if (this->date < other.date) return -1;
     if (this->date > other.date) return 1;

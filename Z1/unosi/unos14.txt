@@ -1,0 +1,1 @@
+Regex validacija mi omogucava da se datum unosi kao dd.mm.yyyy i kao dd-mm-yyyy i kao dd/mm/yyyy, jer zasto ne :)

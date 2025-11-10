@@ -1,23 +1,25 @@
+
 #include "Diary/Diary.hpp"
 
 int main () {
+    signal (SIGINT, signalHandler);
     Diary& diary = Diary::GetInstance ();
 
     while (true) {
         int option = 0;
         do {
-            std::cout << "\n╔════════════════════════════════════╗\n";
-            std::cout << "║        D N E V N I K              ║\n";
-            std::cout << "╚════════════════════════════════════╝\n";
+            std::cout << "\n||====================================||\n";
+            std::cout << "||        D N E V N I K              ||\n";
+            std::cout << "╚====================================╝\n";
             std::cout << "1. Unos novog entrya\n";
             std::cout << "2. Brisanje posljednjeg unosa\n";
             std::cout << "3. Prikaz 5 najprioritetnijih unosa\n";
             std::cout << "4. Pregled dnevnika\n";
             std::cout << "0. Izlaz\n";
-            std::cout << "────────────────────────────────────\n";
+            std::cout << "____________________________________\n";
             std::cout << "Izaberite opciju: ";
             std::cin >> option;
-            clear_screen ();
+            // clear_screen ();
         } while (option < 0 || option > 4);
 
         try {
@@ -55,7 +57,17 @@ int main () {
                 }
 
                 case 2: {
-                    diary.DeleteLastEntry ();
+                    std::cout << "1. Brisanje posljednjeg unosa" << std::endl;
+                    std::cout << "2. Povratak posljednje obrisanog unosa" << std::endl;
+                    int sub_option;
+                    std::cin >> sub_option;
+                    std::cin.ignore ();
+
+                    if (sub_option == 1) diary.DeleteLastEntry ();
+                    if (sub_option == 2)
+                        diary.UndoDelete ();
+                    else
+                        throw std::invalid_argument ("Nevažeći entry");
                     break;
                 }
 
@@ -65,14 +77,15 @@ int main () {
                 }
 
                 case 4: {
-                    // Pregled dnevnika
                     std::cout << "1. Svi unosi\n";
                     std::cout << "2. Po datumu\n";
                     std::cout << "3. Po opsegu datuma\n";
                     int sub_option;
                     std::cin >> sub_option;
                     std::cin.ignore ();
-
+                    if (sub_option == 1) {
+                        diary.ShowAllEntries ();
+                    }
                     if (sub_option == 2) {
                         std::cout << "Unesite datum (DD.MM.YYYY): ";
                         std::string date_str;
@@ -105,6 +118,6 @@ int main () {
         std::cout << "\nPritisnite Enter za nastavak...";
         std::cin.ignore ();
         std::cin.get ();
-        clear_screen ();
+        // clear_screen ();
     }
 }

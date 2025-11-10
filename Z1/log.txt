@@ -1,0 +1,259 @@
+HOME on  D:/Fakultet/SPA/Zadaće/Z1/Z1 main 
+# ./my_program.exe
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 1
+Prioritet (1-10): 2 
+Datum (DD.MM.YYYY) ili Enter za danas:
+Vrijeme (HH:MM:SS) ili Enter za sada:
+Kratak opis: Mogu raditi samo undo radnju na onim unosima koje sam unio pri trenutnom pokretanju programa!
+Pun tekst (zavr┼íite sa '.' u novom redu):
+Kratak opis opisuje tačno šta sam htio reći, samo sad moram nabiti karaktera. Cimer je rekao prike 10 minuta doći, 
+još ga nema a ja sam gladan.... 
+
+Ja o vuku a vuk na vrata, doašo je!
+.
+
+Γ£ô Unos uspje┼íno dodan!
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 2
+1. Brisanje posljednjeg unosa
+2. Povratak posljednje obrisanog unosa
+1
+Obrisan poslednji unos
+GRE┼áKA: Neva┼╛e─çi entry
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 2
+1. Brisanje posljednjeg unosa
+2. Povratak posljednje obrisanog unosa
+1
+GRE┼áKA: Ne postoji unos koji mo┼╛ete obrisati!
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 2
+1. Brisanje posljednjeg unosa
+2. Povratak posljednje obrisanog unosa
+2
+Vra─çen unos (ID: 15)
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 3
+P R I O R I T E T N I  P R I K A Z
+
+
+ID: 1 | Prioritet: 10 | Datum: 9.11.2025 | Vrijeme: 22:24:57 | Kratak Opis: Block Out je...
+Puni opis: Block Out je najbolji bend koji je postojao na nasim prostorima.
+Hvala Vranjkovicu sto mi je otvorio vidike ka progresivnom roku.
+
+Ako asistent koji pregleda ovo nije nikada cuo za Block Out, neka sebi pusti 2000 i kusur godina, nece se pokajati!.
+
+
+ID: 5 | Prioritet: 10 | Datum: 15.10.2025 | Vrijeme: 9:0:0 | Kratak Opis: NOVI ALBUM
+Puni opis: Danilce je izbacio nove Conse, ovo se mora slusati!
+
+Opet, ako neko od asistenata bude citao ovo, topla preporuka za bend Consecration.
+
+ID: 13 | Prioritet: 8 | Datum: 10.11.2025 | Vrijeme: 9:15:49 | Kratak Opis: Opis mora imati barem 10 karaktera!    
+Puni opis: Kratak opis mora imati barem 10 karaktera, dok potpuni opis mora biti duzi od kratkog opisa. Dalje, postoje safeguardi za validacjiu svega ostalog, ali mrsko mi je sada kucati primjer za svaki; izbacice invalid argument.
+
+ID: 6 | Prioritet: 8 | Datum: 9.11.2025 | Vrijeme: 22:34:5 | Kratak Opis: Smorih se ko plovak
+Puni opis: 23.32, noc je, totalni mrak, vise se nista ne vidi u tami
+Sjedim u svojoj sobi, vrtim Vlada Georgijeva - jer mi cimer ne gotivi alternativnu muziku pa smo nasli kompromis na Vladi, i kuckam unose... Iskreno, vise ne znam sta bih pisao a da nije "test", "bla bla", i tako dalje...
+
+Ali, sto bi moja profesorica matematike u srednjoj skoli rekla - Zivot je lijep <3
+
+ID: 11 | Prioritet: 7 | Datum: 30.10.2025 | Vrijeme: 23:53:39 | Kratak Opis: HOLY COW
+Puni opis: HOLY... Dobio sam priliku da sviram u kafi─çu. Sre─ça kafi─ç je malen i bili su svi ljudi koje znam/volim, tako da me trema nije mnogo pojela!
+
+A nisam vala lo┼íe ni svirao :D
+
+Pritisnite Enter za nastavak...
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 4
+1. Svi unosi
+2. Po datumu
+3. Po opsegu datuma
+1
+ID: 1 | Prioritet: 10 | Datum: 9.11.2025 | Vrijeme: 22:24:57 | Kratak Opis: Block Out je...
+ID: 2 | Prioritet: 1 | Datum: 9.11.2025 | Vrijeme: 6:30:15 | Kratak Opis: Studentski Centar "Nikola Tesla"
+ID: 3 | Prioritet: 6 | Datum: 1.10.2025 | Vrijeme: 8:8:15 | Kratak Opis: A new beginning
+ID: 5 | Prioritet: 10 | Datum: 15.10.2025 | Vrijeme: 9:0:0 | Kratak Opis: NOVI ALBUM
+ID: 6 | Prioritet: 8 | Datum: 9.11.2025 | Vrijeme: 22:34:5 | Kratak Opis: Smorih se ko plovak
+ID: 7 | Prioritet: 3 | Datum: 9.11.2025 | Vrijeme: 13:30:0 | Kratak Opis: Podcast sa Nikolom Suvajcem
+ID: 8 | Prioritet: 6 | Datum: 10.11.2025 | Vrijeme: 23:42:0 | Kratak Opis: Tezak slucaj pakla
+ID: 9 | Prioritet: 5 | Datum: 14.2.2005 | Vrijeme: 13:55:0 | Kratak Opis: Guess what?! I'm born!
+ID: 10 | Prioritet: 1 | Datum: 10.11.2025 | Vrijeme: 8:45:41 | Kratak Opis: Propustih menzu
+ID: 12 | Prioritet: 2 | Datum: 10.11.2025 | Vrijeme: 10:10:26 | Kratak Opis: Mar─ìelo
+ID: 11 | Prioritet: 7 | Datum: 30.10.2025 | Vrijeme: 23:53:39 | Kratak Opis: HOLY COW
+ID: 14 | Prioritet: 4 | Datum: 12.3.2005 | Vrijeme: 9:18:10 | Kratak Opis: Ne mora se datum unositi samo sa tackama
+ID: 13 | Prioritet: 8 | Datum: 10.11.2025 | Vrijeme: 9:15:49 | Kratak Opis: Opis mora imati barem 10 karaktera!    
+ID: 15 | Prioritet: 2 | Datum: 10.11.2025 | Vrijeme: 9:23:18 | Kratak Opis: Mogu raditi samo undo radnju na onim unosima koje sam unio pri trenutnom pokretanju programa!
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 4
+1. Svi unosi
+2. Po datumu
+3. Po opsegu datuma
+2
+Unesite datum (DD.MM.YYYY): 14-02-2005
+Unosi za 14.2.2005
+
+ID: 9 | Prioritet: 5 | Datum: 14.2.2005 | Vrijeme: 13:55:0 | Kratak Opis: Guess what?! I'm born!
+Sadr┼╛aj unosa
+Pa veli
+rodio se sin mali gospodin
+male sanjive o─ìi mamine
+oko mamino srce tatino
+bla bla
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 4
+1. Svi unosi
+2. Po datumu
+3. Po opsegu datuma
+3
+Od datuma (DD.MM.YYYY): 1/10/2025
+Do datuma (DD.MM.YYYY): 1/11/2025
+Unosi u intervalu od: 1.10.2025 do: 1.11.2025
+
+ID: 3 | Prioritet: 6 | Datum: 1.10.2025 | Vrijeme: 8:8:15 | Kratak Opis: A new beginning
+Sadr┼╛aj unosa
+Nova akademska godina, nova borba...
+
+Neka bude borba neprestana
+neka bude sto biti ne moze
+
+
+ID: 5 | Prioritet: 10 | Datum: 15.10.2025 | Vrijeme: 9:0:0 | Kratak Opis: NOVI ALBUM
+Sadr┼╛aj unosa
+Danilce je izbacio nove Conse, ovo se mora slusati!
+
+Opet, ako neko od asistenata bude citao ovo, topla preporuka za bend Consecration.
+
+
+ID: 11 | Prioritet: 7 | Datum: 30.10.2025 | Vrijeme: 23:53:39 | Kratak Opis: HOLY COW
+Sadr┼╛aj unosa
+HOLY... Dobio sam priliku da sviram u kafi─çu. Sre─ça kafi─ç je malen i bili su svi ljudi koje znam/volim, tako da me trema nije mnogo pojela!
+
+A nisam vala lo┼íe ni svirao :D
+
+Pritisnite Enter za nastavak...
+
+
+||====================================||
+||        D N E V N I K              ||
+ΓòÜ====================================Γò¥
+1. Unos novog entrya
+2. Brisanje posljednjeg unosa
+3. Prikaz 5 najprioritetnijih unosa
+4. Pregled dnevnika
+0. Izlaz
+____________________________________
+Izaberite opciju: 0
+Dovi─æenja!
+Index fajl uspe┼íno sa─ìuvan!
+ HOME on  D:/Fakultet/SPA/Zadaće/Z1/Z1 main
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

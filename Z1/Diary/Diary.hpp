@@ -57,6 +57,8 @@ class Diary {
 
         void ShowEntriesByDateRange (const Date& from, const Date& to);
 
+        void ShowAllEntries ();
+
         int GetTotalEntries () const;
 
         void ClearAll ();

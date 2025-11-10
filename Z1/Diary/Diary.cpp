@@ -22,6 +22,7 @@ Diary::Diary () : index_file ("dnevnik.txt"), entries_directory ("unosi/"), next
 Diary::~Diary () {
     try {
         SaveIndexFile ();
+        std::cout << "Index fajl uspešno sačuvan!" << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "Greška pri čuvanju dnevnika: " << e.what () << std::endl;
     }
@@ -75,7 +76,6 @@ void Diary::LoadFromFile () {
         }
     }
 }
-
 void Diary::SaveIndexFile () {
     std::ofstream output_file (index_file, std::ios::trunc);
     if (!output_file.is_open ()) {
@@ -86,7 +86,6 @@ void Diary::SaveIndexFile () {
         output_file << EntryToIndexLine (entry) << "\n";
     }
 }
-
 void Diary::SaveEntryContent (const DiaryEntry& entry) {
     std::ofstream entry_output (entries_directory + entry.GetFileName (), std::ios::trunc);
     if (!entry_output.is_open ()) {
@@ -111,9 +110,17 @@ DiaryEntry Diary::ParseIndexLine (const std::string& line) {
     int index = 0;
     auto split_view = std::views::split (line, '|');
     std::string entry_text;
+
     try {
         for (const auto subrange : split_view) {
             std::string sub_string (subrange.begin (), subrange.end ());
+
+            size_t start = sub_string.find_first_not_of (" \t\n\r");
+            size_t end = sub_string.find_last_not_of (" \t\n\r");
+            if (start != std::string::npos && end != std::string::npos) {
+                sub_string = sub_string.substr (start, end - start + 1);
+            }
+
             switch (index) {
                 case 0:
                     id = std::stoi (sub_string);
@@ -132,19 +139,21 @@ DiaryEntry Diary::ParseIndexLine (const std::string& line) {
                     break;
                 case 5:
                     file_name = sub_string;
+                    break;
             }
             index++;
         }
+
         entry_text = LoadEntryContent (file_name);
 
-    } catch (std::invalid_argument& e) {
+    } catch (std::exception& e) {
         std::cerr << "Neispravan format: " << e.what () << std::endl;
     }
+
     return DiaryEntry (id, priority, date, time, short_description, entry_text, file_name);
 }
-
 std::string Diary::EntryToIndexLine (const DiaryEntry& entry) {
-    return entry.GetStringifiedEntry ();
+    return entry.GetIndexFormat ();
 }
 
 void Diary::AddEntry (int priority, const Date& date, const Time& time, const std::string& short_description,
@@ -159,6 +168,7 @@ void Diary::AddEntry (int priority, const Date& date, const Time& time, const st
     current_entries.InsertBack (new_entry);
 
     SaveEntryContent (new_entry);
+
     SaveIndexFile ();
 }
 
@@ -197,17 +207,13 @@ void Diary::ShowTop5Priority () {
     all_entries.ForEach ([&queue] (const DiaryEntry& entry) {
         queue.Insert (entry);
     });
+    std::cout << "P R I O R I T E T N I  P R I K A Z \n\n" << std::endl;
 
     for (int i = 0; i < MAX_ENTRIES && !queue.IsEmpty (); i++) {
         DiaryEntry priority_entry = queue.ExtractMax ();
-        std::cout << "P R I O R I T E T N I  P R I K A Z \n\n" << std::endl;
         std::cout << priority_entry.GetStringifiedEntry () << std::endl;
+        std::cout << "Puni opis: " << priority_entry.GetEntryText () << std::endl;
     }
-    // TODO: Implementiraj prikaz top 5 prioritetnih unosa
-}
-
-void Diary::ShowAllDates () {
-    // TODO: Implementiraj prikaz svih datuma
 }
 
 void Diary::ShowEntriesForDate (const Date& date) {
@@ -242,11 +248,11 @@ void Diary::ShowEntriesByDateRange (const Date& from, const Date& to) {
         }
     }
 }
-
+void Diary::ShowAllEntries () {
+    all_entries.ForEach ([] (const DiaryEntry& entry) {
+        std::cout << entry.GetStringifiedEntry () << std::endl;
+    });
+}
 int Diary::GetTotalEntries () const {
     return all_entries.GetSize ();
-}
-
-void Diary::ClearAll () {
-    // TODO: Implementiraj brisanje svih unosa
 }
