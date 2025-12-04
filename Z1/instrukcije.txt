@@ -1,0 +1,17 @@
+Instrukcije za CMake:
+
+MSVC: 
+cmake --preset=msvc-release && cmake --build --preset=msvc-release && cmake --install build --config Release --prefix "install" && rmdir /S /Q build && echo "MSVC Instalacija GOTOVA! Izvršni fajl je u 'install\bin'."
+
+Ili ako ste kao ja da koristite MinGW a ne MSVC:
+
+cmake --preset=mingw-release && cmake --build --preset=mingw-release && cmake --install build --prefix "install" && rmdir /S /Q build && echo "MinGW Instalacija GOTOVA! Izvršni fajl je u 'install\bin'."
+
+Ako ste na Linux-u:
+
+cmake --preset=linux-release && cmake --build --preset=linux-release && cmake --install build --prefix "install" && rm -rf build && echo "Linux Instalacija GOTOVA! Izvršni fajl je u 'install/bin'."
+
+
+
+A ukoliko ne koristite CMake, ovdje je i g++ poziv 
+g++ -std=c++20 DateTime/date.cpp DateTime/time.cpp Entry/DiaryEntry.cpp Utils/utils.cpp Diary/Diary.cpp main.cpp -o dnevnik

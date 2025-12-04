@@ -1,7 +1,16 @@
 
 #include "Diary/Diary.hpp"
 
+#ifdef _WIN32
+#    include <windows.h>
+#endif
+
 int main () {
+#ifdef _WIN32
+    SetConsoleOutputCP (CP_UTF8);
+    SetConsoleCP (CP_UTF8);
+#endif
+
     signal (SIGINT, signalHandler);
     Diary& diary = Diary::GetInstance ();
 
@@ -15,17 +24,17 @@ int main () {
             std::cout << "2. Brisanje posljednjeg unosa\n";
             std::cout << "3. Prikaz 5 najprioritetnijih unosa\n";
             std::cout << "4. Pregled dnevnika\n";
+            std::cout << "5. Broj unosa\n";
+
             std::cout << "0. Izlaz\n";
             std::cout << "____________________________________\n";
             std::cout << "Izaberite opciju: ";
             std::cin >> option;
-            // clear_screen ();
-        } while (option < 0 || option > 4);
+        } while (option < 0 || option > 5);
 
         try {
             switch (option) {
                 case 1: {
-                    // Unos novog entry-a
                     int priority;
                     std::string date_str, time_str, short_desc, full_text;
 
@@ -63,8 +72,9 @@ int main () {
                     std::cin >> sub_option;
                     std::cin.ignore ();
 
-                    if (sub_option == 1) diary.DeleteLastEntry ();
-                    if (sub_option == 2)
+                    if (sub_option == 1)
+                        diary.DeleteLastEntry ();
+                    else if (sub_option == 2)
                         diary.UndoDelete ();
                     else
                         throw std::invalid_argument ("Nevažeći entry");
@@ -85,8 +95,7 @@ int main () {
                     std::cin.ignore ();
                     if (sub_option == 1) {
                         diary.ShowAllEntries ();
-                    }
-                    if (sub_option == 2) {
+                    } else if (sub_option == 2) {
                         std::cout << "Unesite datum (DD.MM.YYYY): ";
                         std::string date_str;
                         std::getline (std::cin, date_str);
@@ -105,7 +114,11 @@ int main () {
                     }
                     break;
                 }
+                case 5: {
+                    diary.CountEntriesByDate ();
 
+                    break;
+                }
                 case 0: {
                     std::cout << "Doviđenja!\n";
                     return 0;
@@ -118,6 +131,5 @@ int main () {
         std::cout << "\nPritisnite Enter za nastavak...";
         std::cin.ignore ();
         std::cin.get ();
-        // clear_screen ();
     }
 }

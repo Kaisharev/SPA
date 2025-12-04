@@ -31,17 +31,14 @@ Diary::~Diary () {
 bool Diary::ValidateEntry (int priority, std::string short_description, std::string entry_text) const {
     if (priority < 1 || priority > 10) {
         throw std::invalid_argument ("Niste unijeli adekvatan prioritet!");
-        return false;
     }
 
     if (short_description.empty () || entry_text.empty ()) {
         throw std::invalid_argument ("Niste unijeli adekvatan prioritet!");
-        return false;
     }
 
     if (short_description.length () < 10) {
         throw std::invalid_argument ("Prekratak opis!");
-        return false;
     }
 
     if (short_description.length () > entry_text.length ()) {
@@ -95,14 +92,21 @@ void Diary::SaveEntryContent (const DiaryEntry& entry) {
 }
 
 std::string Diary::LoadEntryContent (const std::string& filename) {
-    std::fstream entry_input (entries_directory + filename);
+    std::filesystem::path file_path = std::filesystem::path (entries_directory) / filename;
+    if (!std::filesystem::exists (file_path)) {
+        throw std::runtime_error ("Fajl ne postoji: " + file_path.string ());
+    }
+    std::ifstream entry_input (file_path);
+    if (!entry_input.is_open ()) {
+        throw std::runtime_error ("Ne mogu otvoriti fajl: " + file_path.string ());
+    }
     std::string file_content ((std::istreambuf_iterator<char> (entry_input)), std::istreambuf_iterator<char> ());
 
     return file_content;
 }
 
 DiaryEntry Diary::ParseIndexLine (const std::string& line) {
-    int id, priority;
+    int id = 0, priority = 0;
     Date date;
     Time time;
     std::string short_description, file_name;
@@ -145,7 +149,6 @@ DiaryEntry Diary::ParseIndexLine (const std::string& line) {
         }
 
         entry_text = LoadEntryContent (file_name);
-
     } catch (std::exception& e) {
         std::cerr << "Neispravan format: " << e.what () << std::endl;
     }
@@ -177,7 +180,7 @@ void Diary::DeleteLastEntry () {
         throw std::logic_error ("Ne postoji unos koji možete obrisati!");
     }
     DiaryEntry last_entry = current_entries.GetLastElement ();
-    undo_stack.push (last_entry);
+    undo_stack.Push (last_entry);
     std::filesystem::remove (entries_directory + last_entry.GetFileName ());
 
     current_entries.RemoveBack ();
@@ -191,10 +194,10 @@ void Diary::UndoDelete () {
     if (undo_stack.IsEmpty ()) {
         throw std::logic_error ("Ne postoji unos koji možete vratiti!");
     }
-    DiaryEntry undo_entry = undo_stack.peek ();
+    DiaryEntry undo_entry = undo_stack.Peek ();
     current_entries.InsertBack (undo_entry);
     all_entries.InsertBack (undo_entry);
-    undo_stack.pop ();
+    undo_stack.Pop ();
 
     SaveEntryContent (undo_entry);
     SaveIndexFile ();
@@ -203,7 +206,6 @@ void Diary::UndoDelete () {
 
 void Diary::ShowTop5Priority () {
     PriorityQueue<DiaryEntry> queue;
-    int counter = 0;
     all_entries.ForEach ([&queue] (const DiaryEntry& entry) {
         queue.Insert (entry);
     });
@@ -246,6 +248,45 @@ void Diary::ShowEntriesByDateRange (const Date& from, const Date& to) {
             std::string entry_content = LoadEntryContent (entry.GetFileName ());
             std::cout << "Sadržaj unosa \n" << entry_content << std::endl;
         }
+    }
+
+    if (!found_entry) {
+        std::cout << "Ne postoje unos za ove datume!" << std::endl;
+    }
+}
+void Diary::CountEntriesByDate () {
+    if (all_entries.IsEmpty ()) {
+        std::cout << "Ne postoje unosi!" << std::endl;
+        return;
+    }
+
+    struct DateCount {
+            Date date;
+            int count;
+
+            DateCount (const Date& d) : date (d), count (1) {}
+    };
+
+    LinkedList<DateCount> date_counts;
+
+    for (auto& entry : all_entries) {
+        bool found = false;
+        for (auto& counter : date_counts) {
+            if (counter.date == entry.GetDate ()) {
+                counter.count++;
+                found = true;
+                break;
+            }
+        }
+        
+        if (!found) {
+            date_counts.InsertBack (DateCount (entry.GetDate ()));
+        }
+    }
+    
+    std::cout << "Broj unosa po datumima:\n" << std::endl;
+    for (const auto& counts : date_counts) {
+        std::cout << counts.date.GetDateAsString () << ": " << counts.count << " unos(a)" << std::endl;
     }
 }
 void Diary::ShowAllEntries () {

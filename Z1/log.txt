@@ -2,8 +2,8 @@ HOME on  D:/Fakultet/SPA/Zadaće/Z1/Z1 main
 # ./my_program.exe
 
 ||====================================||
-||        D N E V N I K              ||
-ΓòÜ====================================Γò¥
+||        D N E V N I K               ||
+||====================================||
 1. Unos novog entrya
 2. Brisanje posljednjeg unosa
 3. Prikaz 5 najprioritetnijih unosa

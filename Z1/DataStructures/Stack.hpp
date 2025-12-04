@@ -9,16 +9,16 @@ class Stack {
         LinkedList<T> list;
 
     public:
-        void push (T value) {
+        void Push (T value) {
             list.InsertFront (value);
         }
-        void pop () {
+        void Pop () {
             if (IsEmpty ()) {
                 throw std::runtime_error ("Stek je prazan!");
             }
             list.RemoveFront ();
         }
-        T peek () const {
+        T Peek () const {
             if (IsEmpty ()) {
                 throw std::runtime_error ("Stek je prazan!");
             }
@@ -27,12 +27,12 @@ class Stack {
         bool IsEmpty () const {
             return list.IsEmpty ();
         }
-        int getSize () const {
+        int GetSize () const {
             return list.GetSize ();
         };
         void clear () {
             while (!IsEmpty ()) {
-                pop ();
+                Pop ();
             }
         };
 };

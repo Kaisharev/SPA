@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "base-config",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build",
+      "installDir": "${sourceDir}/install"
+    },
+    {
+      "name": "linux-release",
+      "inherits": "base-config",
+      "description": "Podrazumijevani Release build za Linux (g++)",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "msvc-release",
+      "inherits": "base-config",
+      "description": "Podrazumijevani Release build za Windows (MSVC)",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64"
+    },
+    {
+      "name": "mingw-release",
+      "inherits": "base-config",
+      "description": "Posebni Release build za Windows (MinGW)",
+      "generator": "MinGW Makefiles",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux-release",
+      "configurePreset": "linux-release"
+    },
+    {
+      "name": "msvc-release",
+      "configurePreset": "msvc-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "mingw-release",
+      "configurePreset": "mingw-release"
+    }
+  ]
+}

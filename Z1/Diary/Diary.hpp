@@ -60,6 +60,6 @@ class Diary {
         void ShowAllEntries ();
 
         int GetTotalEntries () const;
-
+        void CountEntriesByDate ();
         void ClearAll ();
 };

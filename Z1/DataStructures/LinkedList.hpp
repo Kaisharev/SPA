@@ -39,6 +39,7 @@ class LinkedList {
             Node<T>* new_node = new Node<T> (value);
             if (head == nullptr) {
                 head = tail = new_node;
+                size++;
                 return;
             }
 
@@ -50,7 +51,7 @@ class LinkedList {
         void ForEach (Func func) const {
             Node<T>* current = head;
             while (current != nullptr) {
-                func (current->data);  // Poziva lambdu za svaki element
+                func (current->data);
                 current = current->next;
             }
         }
@@ -148,7 +149,7 @@ class LinkedList {
             return tail->data;
         }
 
-        void AddSorted (T value) {
+        void InsertSorted (T value) {
             Node<T>* newNode = new Node<T> (value);
 
             if (IsEmpty () || value < head->data) {
@@ -173,7 +174,7 @@ class LinkedList {
             }
         }
 
-            int GetSize () const {
+        int GetSize () const {
             return size;
         }
 
