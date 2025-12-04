@@ -10,6 +10,6 @@ class SensorLoader : public ISensorLoader {
         std::vector<Sensor> LoadSensors (const std::filesystem::path& path) override;
 
     private:
-        Sensor LoadSensorFromLine (const std::string& line) override;
-        Sensor ValidateSensor (const Sensor& sensor) override;
+        Sensor LoadSensorFromLine (const std::string& line);
+        Sensor ValidateSensor (const Sensor& sensor);
 };
