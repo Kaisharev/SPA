@@ -8,7 +8,7 @@
 #include <sstream>
 
 std::vector<Sensor> SensorLoader::LoadSensors (const std::filesystem::path& path) {
-    std::filesystem::path file_path = path / "sensors.csv";
+    std::filesystem::path file_path = path;
     if (!std::filesystem::exists (file_path)) {
         throw std::runtime_error ("Fajl ne postoji: " + file_path.string ());
     }

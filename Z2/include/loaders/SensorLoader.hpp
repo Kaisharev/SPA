@@ -5,6 +5,7 @@
 
 #include "../interfaces/ISensorLoader.hpp"
 class SensorLoader : public ISensorLoader {
+    public:
         SensorLoader () = default;
         ~SensorLoader () = default;
         std::vector<Sensor> LoadSensors (const std::filesystem::path& path) override;
