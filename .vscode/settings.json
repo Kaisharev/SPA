@@ -58,6 +58,7 @@
     "fstream": "cpp",
     "codecvt": "cpp",
     "ranges": "cpp",
-    "csignal": "cpp"
+    "csignal": "cpp",
+    "cstdarg": "cpp"
   }
 }
