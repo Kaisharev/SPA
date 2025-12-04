@@ -16,7 +16,7 @@ int main () {
     GraphLoader loader;
 
     try {
-        auto matrix = loader.LoadAdjancencyMatrix (location);
+        auto matrix = loader.LoadAdjacencyMatrix (location);
         std::cout << "Loaded matrix with " << matrix.size () << " rows" << std::endl;
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what () << std::endl;

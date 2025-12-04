@@ -1,7 +1,9 @@
 #include "../../include/loaders/GraphLoader.hpp"
+#include <fstream>
+#include <sstream>
 
-std::vector<std::vector<int>> LoadAdjancencyMatrix (const std::filesystem::path& location) {
-    std::filesystem::path file_path = location / "graph.txt";
+std::vector<std::vector<int>> GraphLoader::LoadAdjacencyMatrix (const std::filesystem::path& path) {
+    std::filesystem::path file_path = path / "graph.txt";
     if (!std::filesystem::exists (file_path)) {
         throw std::runtime_error ("Fajl ne postoji: " + file_path.string ());
     }
@@ -21,8 +23,6 @@ std::vector<std::vector<int>> LoadAdjancencyMatrix (const std::filesystem::path&
         }
         if (!row.empty ()) {
             matrix.push_back (row);
-            std::copy (row.begin (), row.end (), std::ostream_iterator<int> (std::cout, " "));
-            std::cout << std::endl;
         }
     }
 

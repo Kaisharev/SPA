@@ -59,6 +59,7 @@
     "codecvt": "cpp",
     "ranges": "cpp",
     "csignal": "cpp",
-    "cstdarg": "cpp"
+    "cstdarg": "cpp",
+    "sensorloader": "cpp"
   }
 }
