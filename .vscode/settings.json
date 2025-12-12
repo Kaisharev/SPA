@@ -61,5 +61,6 @@
     "csignal": "cpp",
     "cstdarg": "cpp",
     "sensorloader": "cpp"
-  }
+  },
+  "cmake.sourceDirectory": "D:/Fakultet/SPA/Zadaće/Z1/Z1"
 }
