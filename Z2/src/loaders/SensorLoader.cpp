@@ -38,8 +38,8 @@ Sensor SensorLoader::LoadSensorFromLine (const std::string& line) {
         for (const auto subrange : split_view) {
             std::string sub_string (subrange.begin (), subrange.end ());
 
-            size_t start = sub_string.find_first_not_of (" \t\n\r");
-            size_t end = sub_string.find_last_not_of (" \t\n\r");
+            auto start = sub_string.find_first_not_of (" \t\n\r");
+            auto end = sub_string.find_last_not_of (" \t\n\r");
             if (start != std::string::npos && end != std::string::npos) {
                 sub_string = sub_string.substr (start, end - start + 1);
             }
@@ -59,6 +59,7 @@ Sensor SensorLoader::LoadSensorFromLine (const std::string& line) {
                     break;
             }
             index++;
+             
         }
 
     } catch (std::exception& e) {
