@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
 struct Sensor {
-        int id_;
-        std::string sensor_type_;
-        int criticality_;
-        int data_output_;
+        int id;
+        std::string sensor_type;
+        int criticality;
+        int data_output;
 
-        Sensor () : id_ (-1), sensor_type_ (""), criticality_ (0), data_output_ (0) {}
+        Sensor () : id (-1), sensor_type (""), criticality (0), data_output (0) {}
 
         Sensor (int id, const std::string& sensor_type, int criticality, int data_output)
-            : id_ (id), sensor_type_ (sensor_type), criticality_ (criticality), data_output_ (data_output) {}
+            : id (id), sensor_type (sensor_type), criticality (criticality), data_output (data_output) {}
 };

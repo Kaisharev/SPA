@@ -2,7 +2,7 @@
 #include <vector>
 
 struct BackupRoute {
-        int nodeId_;
-        std::vector<int> path_;
-        int distance_;
+        int nodeId;
+        std::vector<int> path;
+        int distance;
 };

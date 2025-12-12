@@ -12,5 +12,5 @@ class KruskalMST : public IMSTBuilder {
 
     private:
         std::vector<Edge> mst_edges_;
-        int total_weight = 0;
+        int total_weight_ = 0;
 };

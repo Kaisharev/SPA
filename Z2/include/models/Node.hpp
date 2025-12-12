@@ -2,8 +2,8 @@
 #include <vector>
 
 struct Node {
-        int parent_;
-        std::vector<int> children_;
-        double subtree_load_;
-        int subtree_size_;
+        int parent;
+        std::vector<int> children;
+        double subtree_load;
+        int subtree_size;
 };
