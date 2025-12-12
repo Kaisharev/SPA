@@ -1,7 +1,6 @@
 #pragma once
-#include <filesystem>
+
 #include <string>
-#include <vector>
 
 #include "../interfaces/ISensorLoader.hpp"
 class SensorLoader : public ISensorLoader {

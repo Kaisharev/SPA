@@ -6,7 +6,7 @@ class Graph : public IGraph {
     public:
         Graph () = default;
         explicit Graph (std::vector<std::vector<int>>&& matrix);
-        Graph::Graph (int numNodes) : adjMatrix_ (numNodes, std::vector<int> (numNodes, 0)), edgeCount_ (0) {}
+        explicit Graph (int numNodes); 
 
         const std::vector<std::vector<int>>& GetAdjMatrix () const {
             return adjMatrix_;

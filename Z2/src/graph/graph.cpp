@@ -6,25 +6,28 @@ Graph::Graph (std::vector<std::vector<int>>&& matrix) {
             throw std::invalid_argument ("Matrica mora biti kvadratna");
         }
     }
-    adjMatrix_ = std::move (matrix);
+    this->adjMatrix_ = std::move (matrix);
     RecomputeEdgeCount ();
 }
-void Graph::RecomputeEdgeCount () {
-    int adj_matrix_size = adjMatrix_.size ();
 
-    for (int i = 0; i < adj_matrix_size; i++) {
-        for (int j = 0; j < adj_matrix_size; j++) {
+Graph::Graph (int numNodes) : adjMatrix_ (numNodes, std::vector<int> (numNodes, 0)), edgeCount_ (0) {}
+
+void Graph::RecomputeEdgeCount () {
+    int n = static_cast<int> (adjMatrix_.size ());
+    edgeCount_ = 0;
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
             if (adjMatrix_[i][j] > 0) edgeCount_++;
         }
     }
 }
 bool Graph::IsValidNode (int node) const {
-    return node >= 0 && node < static_cast<int> (adjMatrix_.size ());
+    return node >= 0 && node < static_cast<int> (this->adjMatrix_.size ());
 }
 void Graph::DFS (int node, std::vector<bool>& visited) const {
     visited[node] = true;
-    for (int i = 0; i < static_cast<int> (adjMatrix_.size ()); i++) {
-        if (adjMatrix_[node][i] > 0 && !visited[i]) {
+    for (int i = 0; i < static_cast<int> (this->adjMatrix_.size ()); i++) {
+        if (this->adjMatrix_[node][i] > 0 && !visited[i]) {
             DFS (i, visited);
         }
     }
@@ -32,10 +35,11 @@ void Graph::DFS (int node, std::vector<bool>& visited) const {
 
 std::vector<Edge> Graph::GetAllEdges () const {
     std::vector<Edge> edges;
-    for (int i = 0; i < static_cast<int> (adjMatrix_.size ()); i++) {
-        for (int j = 0; j < static_cast<int> (adjMatrix_[i].size ()); j++) {
-            if (adjMatrix_[i][j] > 0) {
-                edges.push_back ({i, j, adjMatrix_[i][j]});
+    int n = static_cast<int> (adjMatrix_.size ());
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if (this->adjMatrix_[i][j] > 0) {
+                edges.push_back ({i, j, this->adjMatrix_[i][j]});
             }
         }
     }
@@ -43,15 +47,15 @@ std::vector<Edge> Graph::GetAllEdges () const {
 }
 
 void Graph::RemoveEdge (int u, int v) {
-    if (u >= static_cast<int> (adjMatrix_.size ()) || v >= static_cast<int> (adjMatrix_.size ()))
+    if (u >= static_cast<int> (this->adjMatrix_.size ()) || v >= static_cast<int> (this->adjMatrix_.size ()))
         throw std::out_of_range ("Data grana nije u opsegu!");
-    adjMatrix_[u][v] = 0;
-    edgeCount_--;
+    this->adjMatrix_[u][v] = 0;
+    this->edgeCount_--;
 }
 
 void Graph::RestoreEdge (int u, int v, int weight) {
-    if (u >= static_cast<int> (adjMatrix_.size ()) || v >= static_cast<int> (adjMatrix_.size ()))
+    if (u >= static_cast<int> (this->adjMatrix_.size ()) || v >= static_cast<int> (this->adjMatrix_.size ()))
         throw std::out_of_range ("Data grana nije u opsegu!");
-    adjMatrix_[u][v] = weight;
-    edgeCount_++;
+    this->adjMatrix_[u][v] = weight;
+    this->edgeCount_++;
 }
