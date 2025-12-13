@@ -6,7 +6,7 @@ class Graph : public IGraph {
     public:
         Graph () = default;
         explicit Graph (std::vector<std::vector<int>>&& matrix);
-        explicit Graph (int numNodes); 
+        explicit Graph (int numNodes);
 
         const std::vector<std::vector<int>>& GetAdjMatrix () const {
             return adjMatrix_;
@@ -15,7 +15,7 @@ class Graph : public IGraph {
             return adjMatrix_;
         }
         int GetNodeCount () const {
-            return adjMatrix_.size ();
+            return static_cast<int> (adjMatrix_.size ());
         }
         std::vector<Edge> GetAllEdges () const override;
         void RemoveEdge (int u, int v) override;

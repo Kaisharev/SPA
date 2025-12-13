@@ -6,7 +6,7 @@
 class SensorLoader : public ISensorLoader {
     public:
         SensorLoader () = default;
-        ~SensorLoader () = default;
+        ~SensorLoader () override = default;
         std::vector<Sensor> LoadSensors (const std::filesystem::path& path) override;
 
     private:

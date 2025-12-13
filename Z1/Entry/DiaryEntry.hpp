@@ -36,7 +36,7 @@ class DiaryEntry {
         std::string GetFileName () const;
         Date GetDate () const;
         int GetID () const {
-            return this->id;
+            return id;
         }
 
         bool operator< (const DiaryEntry& other) const;
