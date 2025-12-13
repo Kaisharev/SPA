@@ -7,8 +7,12 @@
 class KruskalMST : public IMSTBuilder {
     public:
         void BuildMST (const std::vector<std::vector<int>>& graph) override;
-        std::vector<Edge> GetMSTEdges () const override;
-        int GetTotalWeight () const override;
+        std::vector<Edge> GetMSTEdges () const {
+            return this->mst_edges_;
+        };
+        int GetTotalWeight () const {
+            return this->total_weight_;
+        };
 
     private:
         std::vector<Edge> mst_edges_;

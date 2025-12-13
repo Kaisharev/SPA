@@ -18,7 +18,7 @@ std::vector<Sensor> SensorLoader::LoadSensors (const std::filesystem::path& path
     }
     std::vector<Sensor> sensors;
     std::string line;
-    std::getline (entry_input, line);  // Preskakanje prve linije CSV fajla
+    std::getline (entry_input, line);  // Preskače prvu linije CSV fajla
     while (std::getline (entry_input, line)) {
         sensors.push_back (LoadSensorFromLine (line));
     }
