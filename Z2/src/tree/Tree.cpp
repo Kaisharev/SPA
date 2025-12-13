@@ -3,7 +3,7 @@
 #include <queue>
 #include <unordered_set>
 
-Tree::Tree (int root, const std::vector<Edge>& edges) : root_ (root), edges_ (edges), totalWeight_ (0), nodeCount_ (0) {
+Tree::Tree (int root, const std::vector<Edge>& edges) : root_ (root), edges_ (edges), total_weight_ (0), node_count_ (0) {
     BuildTree ();
 }
 
@@ -16,10 +16,10 @@ void Tree::BuildTree () {
         adj[e.to].push_back ({e.from, e.weight});
         nodes.insert (e.from);
         nodes.insert (e.to);
-        totalWeight_ += e.weight;
+        total_weight_ += e.weight;
     }
     nodes.insert (root_);
-    nodeCount_ = nodes.size ();
+    node_count_ = nodes.size ();
 
     std::queue<int> q;
     q.push (root_);

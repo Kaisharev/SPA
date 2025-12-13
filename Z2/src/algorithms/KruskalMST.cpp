@@ -28,7 +28,7 @@ void KruskalMST::BuildMST (const std::vector<std::vector<int>>& graph) {
         if (uf.unite (e.to, e.from)) {
             mst_edges_.push_back (e);
             total_weight_ += e.weight;
-            if (mst_edges_.size () == n - 1) break;
+            if (mst_edges_.size () == static_cast<size_t> (n - 1)) break;
         }
     }
 }

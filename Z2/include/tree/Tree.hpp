@@ -14,13 +14,13 @@ class Tree : public ITree {
             return root_;
         }
         int GetNodeCount () const override {
-            return nodeCount_;
+            return node_count_;
         }
         std::vector<Edge> GetEdges () const override {
             return edges_;
         }
         int GetTotalWeight () const override {
-            return totalWeight_;
+            return total_weight_;
         }
 
         std::vector<int> GetChildren (int node) const override;
@@ -33,9 +33,10 @@ class Tree : public ITree {
 
     private:
         int root_;
-        int nodeCount_;
-        int totalWeight_;
         std::vector<Edge> edges_;
+        int total_weight_;
+        int node_count_;
+
         std::unordered_map<int, std::vector<int>> children_;
         std::unordered_map<int, int> parent_;
         std::unordered_map<int, int> depth_;

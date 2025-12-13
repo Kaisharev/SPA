@@ -21,21 +21,14 @@ void Graph::RecomputeEdgeCount () {
         }
     }
 }
-bool Graph::IsValidNode (int node) const {
+bool Graph::IsValidNode (int node) const noexcept {
     return node >= 0 && node < static_cast<int> (adjMatrix_.size ());
-}
-void Graph::DFS (int node, std::vector<bool>& visited) const {
-    visited[node] = true;
-    for (int i = 0; i < static_cast<int> (adjMatrix_.size ()); i++) {
-        if (adjMatrix_[node][i] > 0 && !visited[i]) {
-            DFS (i, visited);
-        }
-    }
 }
 
 std::vector<Edge> Graph::GetAllEdges () const {
     std::vector<Edge> edges;
     int n = static_cast<int> (adjMatrix_.size ());
+
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {
             if (adjMatrix_[i][j] > 0) {

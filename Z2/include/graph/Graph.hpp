@@ -25,6 +25,5 @@ class Graph : public IGraph {
         std::vector<std::vector<int>> adjMatrix_;
         int edgeCount_ = 0;
         bool IsValidNode (int node) const noexcept;
-        void DFS (int node, std::vector<bool>& visited) const;
         void RecomputeEdgeCount ();
 };

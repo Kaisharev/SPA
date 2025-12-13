@@ -9,4 +9,6 @@ class IGraph {
         virtual void RemoveEdge (int u, int v) = 0;
         virtual void RestoreEdge (int u, int v, int weight) = 0;
         virtual ~IGraph () = default;
+        virtual const std::vector<std::vector<int>>& GetAdjMatrix () const = 0;
+        virtual int GetNodeCount () const = 0;
 };

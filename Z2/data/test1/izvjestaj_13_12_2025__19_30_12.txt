@@ -1,0 +1,153 @@
+================================================================================
+                    STRUKTURE PODATAKA I ALGORITMI - PRIMJER IZVRŠENJA PROGRAMA                      
+================================================================================
+Datum generisanja: 13. 12.2025.  19:30:12
+
+ULAZNI PODACI:
+--------------------------------------------------------------------------------
+Graf fajl:      D:\Fakultet\SPA\Zadaće\Z1\Z2\data\test1\graph.txt
+Senzori fajl:  D:\Fakultet\SPA\Zadaće\Z1\Z2\data\test1\sensors.csv
+Matrica:       0 x 0
+Broj senzora:  20
+
+MINIMALNO RAZAPINJUĆE STABLO (MST):
+--------------------------------------------------------------------------------
+Korijen (centrala):  15
+Broj čvorova:        20
+Ukupna težina MST:   32
+
+HIJERARHIJA STABLA:
+--------------------------------------------------------------------------------
+└── 15 (dubina=0) [korijen]
+    ├── 1 (dubina=1) [listić]
+    └── 0 (dubina=1)
+        ├── 16 (dubina=2)
+        │   ├── 4 (dubina=3)
+        │   │   └── 11 (dubina=4)
+        │   │       └── 5 (dubina=5)
+        │   │           ├── 9 (dubina=6)
+        │   │           │   └── 14 (dubina=7) [listić]
+        │   │           └── 7 (dubina=6)
+        │   │               └── 12 (dubina=7)
+        │   │                   ├── 10 (dubina=8)
+        │   │                   │   └── 3 (dubina=9)
+        │   │                   │       └── 18 (dubina=10) [listić]
+        │   │                   └── 2 (dubina=8)
+        │   │                       └── 19 (dubina=9) [listić]
+        │   ├── 17 (dubina=3) [listić]
+        │   └── 8 (dubina=3)
+        │       └── 13 (dubina=4) [listić]
+        └── 6 (dubina=2) [listić]
+
+OPTEREĆENJA GRANA (KB/min):
+--------------------------------------------------------------------------------
+Grana             Opterećenje    Br. senzora
+---------------------------------------------
+0 -> 15                 224 KB          18
+16 -> 0                 204 KB          16
+4 -> 16                 146 KB          12
+11 -> 4                 141 KB          11
+5 -> 11                 133 KB          10
+7 -> 5                   89 KB           7
+12 -> 7                  74 KB           6
+9 -> 5                   38 KB           2
+2 -> 12                  37 KB           2
+8 -> 16                  33 KB           2
+19 -> 2                  25 KB           1
+10 -> 12                 25 KB           3
+1 -> 15                  20 KB           1
+3 -> 10                  20 KB           2
+17 -> 16                 20 KB           1
+6 -> 0                   20 KB           1
+13 -> 8                  18 KB           1
+18 -> 3                  10 KB           1
+14 -> 9                   8 KB           1
+
+USKO GRLO (BOTTLENECK):
+--------------------------------------------------------------------------------
+Najopterećenija grana: 0 -> 15
+Opterećenje:           224 KB/min
+Broj senzora:          18
+
+SIMULACIJA KVARA GRANE:
+--------------------------------------------------------------------------------
+Simuliran kvar grane: 0 -> 15
+Pogođeni čvorovi:     18
+
+REZERVNE RUTE (Dijkstra u originalnom grafu):
+---------------------------------------------
+Čvor 0:
+  Ruta:      0 -> 16 -> 1 -> 15
+  Distanca: 7
+
+Čvor 16:
+  Ruta:      16 -> 1 -> 15
+  Distanca: 4
+
+Čvor 4:
+  Ruta:      4 -> 16 -> 1 -> 15
+  Distanca: 5
+
+Čvor 11:
+  Ruta:      11 -> 5 -> 1 -> 15
+  Distanca: 5
+
+Čvor 5:
+  Ruta:      5 -> 1 -> 15
+  Distanca: 4
+
+Čvor 9:
+  Ruta:      9 -> 5 -> 1 -> 15
+  Distanca: 5
+
+Čvor 14:
+  Ruta:      14 -> 2 -> 15
+  Distanca: 7
+
+Čvor 7:
+  Ruta:      7 -> 5 -> 1 -> 15
+  Distanca: 5
+
+Čvor 12:
+  Ruta:      12 -> 2 -> 15
+  Distanca: 6
+
+Čvor 10:
+  Ruta:      10 -> 15
+  Distanca: 7
+
+Čvor 3:
+  Ruta:      3 -> 16 -> 1 -> 15
+  Distanca: 7
+
+Čvor 18:
+  Ruta:      18 -> 9 -> 5 -> 1 -> 15
+  Distanca: 8
+
+Čvor 2:
+  Ruta:      2 -> 15
+  Distanca: 3
+
+Čvor 19:
+  Ruta:      19 -> 2 -> 15
+  Distanca: 5
+
+Čvor 17:
+  Ruta:      17 -> 16 -> 1 -> 15
+  Distanca: 5
+
+Čvor 8:
+  Ruta:      8 -> 16 -> 1 -> 15
+  Distanca: 6
+
+Čvor 13:
+  Ruta:      13 -> 8 -> 16 -> 1 -> 15
+  Distanca: 7
+
+Čvor 6:
+  Ruta:      6 -> 17 -> 16 -> 1 -> 15
+  Distanca: 11
+
+================================================================================
+                              KRAJ IZVJEŠTAJA                                   
+================================================================================
