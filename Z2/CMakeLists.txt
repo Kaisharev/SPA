@@ -44,8 +44,8 @@ set(LIB_SOURCES
 add_library(sensor_lib STATIC ${LIB_SOURCES})
 target_include_directories(sensor_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-add_executable(z2 src/main.cpp)
-target_link_libraries(z2 PRIVATE sensor_lib)
+add_executable(zadaca src/main.cpp)
+target_link_libraries(zadaca PRIVATE sensor_lib)
 
 option(BUILD_TESTS "Build unit tests" ON)
 
@@ -84,3 +84,23 @@ endif()
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Build tests: ${BUILD_TESTS}")
+
+install(TARGETS zadaca
+    RUNTIME DESTINATION bin
+)
+
+
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/data"
+    DESTINATION bin
+)
+
+if(BUILD_TESTS)
+    install(TARGETS 
+        test_unionfind 
+        test_kruskal 
+        test_dijkstra 
+        test_loadcalc 
+        test_tree
+        RUNTIME DESTINATION bin/tests
+    )
+endif()

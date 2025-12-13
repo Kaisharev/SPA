@@ -1,0 +1,10 @@
+id,sensor_type,criticality,data_output
+1,temperature,85,12
+2,humidity,60,18
+3,pressure,95,30
+4,air_quality,70,15
+5,gas_detector,100,45
+6,motion,40,8
+7,vibration,75,22
+8,smoke_detector,100,35
+9,noise,55,10
