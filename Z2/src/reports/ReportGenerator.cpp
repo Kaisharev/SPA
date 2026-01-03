@@ -71,7 +71,7 @@ std::string ReportGenerator::formatHeader () const {
     std::time_t now = std::time (nullptr);
     char timeBuffer[64];
     std::strftime (timeBuffer, sizeof (timeBuffer), "%d. %m.%Y.  %H:%M:%S", std::localtime (&now));
-    ss << "Datum generisanja: " << timeBuffer << "\n\n";
+    ss << "Datum generisanja izvještaja: " << timeBuffer << "\n\n";
 
     return ss.str ();
 }
@@ -82,7 +82,8 @@ std::string ReportGenerator::formatInputInfo () const {
     ss << formatSeparator ('-');
     ss << "Graf fajl:      " << graph_file.string () << "\n";
     ss << "Senzori fajl:  " << sensors_file.string () << "\n";
-    ss << "Matrica:       " << matrix_rows_ << " x " << matrix_rows_ << "\n";
+    // ss << "Matrica:       " << matrix_rows_ << " x " << matrix_rows_ << "\n";
+    // iz nekog razloga samo ispisuje 0x0...
     ss << "Broj senzora:  " << sensor_count_ << "\n\n";
     return ss.str ();
 }
@@ -137,7 +138,7 @@ std::string ReportGenerator::formatBottleneck () const {
     std::ostringstream ss;
     ss << std::fixed << std::setprecision (0);
 
-    ss << "USKO GRLO (BOTTLENECK):\n";
+    ss << "USKO GRLO:\n";
     ss << formatSeparator ('-');
 
     if (bottleneck_.valid) {

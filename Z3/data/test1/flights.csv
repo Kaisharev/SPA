@@ -1,0 +1,101 @@
+departureAirport,arrivalAirport,departureCode,arrivalCode,departureCity,arrivalCity,departureCountry,arrivalCountry,airlineName,flightNumber,durationInHours
+Benito Juárez International,O'Hare International,MEX,ORD,Mexico City,Chicago,Mexico,USA,Aeroméxico,AM5161,3
+John F. Kennedy International,Hartsfield-Jackson Atlanta,JFK,ATL,New York,Atlanta,USA,USA,Delta Air Lines,DL3734,1.5
+John F. Kennedy International,Hartsfield-Jackson Atlanta,JFK,ATL,New York,Atlanta,USA,USA,American Airlines,AA7813,1.5
+Haneda,Incheon International,HND,ICN,Tokyo,Seoul,Japan,South Korea,All Nippon Airways,NH4003,3
+Copenhagen Airport,Charles de Gaulle,CPH,CDG,Copenhagen,Paris,Denmark,France,SAS Scandinavian,SK8133,3
+Hamad International,Bole International,DOH,ADD,Doha,Addis Ababa,Qatar,Ethiopia,Qatar Airways,QR4803,3
+Sydney Airport,Melbourne Airport,SYD,MEL,Sydney,Melbourne,Australia,Australia,Qantas,QF4285,1.5
+Leonardo da Vinci International,Frankfurt Airport,FCO,FRA,Rome,Frankfurt,Italy,Germany,Alitalia,AZ7452,3
+Bole International,Hamad International,ADD,DOH,Addis Ababa,Doha,Ethiopia,Qatar,Ethiopian Airlines,ET3606,3
+Adolfo Suárez Madrid–Barajas,Jorge Chávez International,MAD,LIM,Madrid,Lima,Spain,Peru,Iberia,IB5567,13
+Incheon International,Charles de Gaulle,ICN,CDG,Seoul,Paris,South Korea,France,Korean Air,KE6519,13
+Heathrow,Charles de Gaulle,LHR,CDG,London,Paris,UK,France,British Airways,BA5112,4
+Charles de Gaulle,Frankfurt Airport,CDG,FRA,Paris,Frankfurt,France,Germany,Air France,AF6606,3
+Frankfurt Airport,Charles de Gaulle,FRA,CDG,Frankfurt,Paris,Germany,France,Lufthansa,LH3045,3
+Changi,Beijing Capital International,SIN,PEK,Singapore,Beijing,Singapore,China,Singapore Airlines,SQ9239,3
+Incheon International,Haneda,ICN,HND,Seoul,Tokyo,South Korea,Japan,Korean Air,KE9236,3
+Changi,Leonardo da Vinci International,SIN,FCO,Singapore,Rome,Singapore,Italy,Singapore Airlines,SQ4809,12
+O.R. Tambo International,Charles de Gaulle,JNB,CDG,Johannesburg,Paris,South Africa,France,South African Airways,SA8434,3
+El Dorado International,Cape Town International,BOG,CPT,Bogotá,Cape Town,Colombia,South Africa,Avianca,AV9896,13
+O.R. Tambo International,Charles de Gaulle,JNB,CDG,Johannesburg,Paris,South Africa,France,South African Airways,SA4339,3
+Hamad International,Bole International,DOH,ADD,Doha,Addis Ababa,Qatar,Ethiopia,Qatar Airways,QR2224,3
+Haneda,Incheon International,HND,ICN,Tokyo,Seoul,Japan,South Korea,All Nippon Airways,NH9502,3
+Los Angeles International,Denver International,LAX,DEN,Los Angeles,Denver,USA,USA,Southwest Airlines,WN4295,2.5
+Los Angeles International,San Francisco International,LAX,SFO,Los Angeles,San Francisco,USA,USA,United Airlines,UA9759,1.5
+Hong Kong International,Changi,HKG,SIN,Hong Kong,Singapore,China,Singapore,Cathay Pacific,CX8409,3
+Haneda,Incheon International,HND,ICN,Tokyo,Seoul,Japan,South Korea,All Nippon Airways,NH4423,3
+Copenhagen Airport,Charles de Gaulle,CPH,CDG,Copenhagen,Paris,Denmark,France,SAS Scandinavian,SK4469,3
+Heathrow,Charles de Gaulle,LHR,CDG,London,Paris,UK,France,British Airways,BA1708,4
+Benito Juárez International,O'Hare International,MEX,ORD,Mexico City,Chicago,Mexico,USA,Aeroméxico,AM3850,3
+Benito Juárez International,O'Hare International,MEX,ORD,Mexico City,Chicago,Mexico,USA,Aeroméxico,AM3850,3
+Frankfurt Airport,Charles de Gaulle,FRA,CDG,Frankfurt,Paris,Germany,France,Lufthansa,LH8174,3
+John F. Kennedy International,Hartsfield-Jackson Atlanta,JFK,ATL,New York,Atlanta,USA,USA,Delta Air Lines,DL4833,1.5
+O.R. Tambo International,Vancouver International,JNB,YVR,Johannesburg,Vancouver,South Africa,Canada,South African Airways,SA4317,15
+Toronto Pearson,John F. Kennedy International,YYZ,JFK,Toronto,New York,Canada,USA,Air Canada,AC3020,3
+Los Angeles International,San Francisco International,LAX,SFO,Los Angeles,San Francisco,USA,USA,Southwest Airlines,WN2418,1.5
+Hong Kong International,Changi,HKG,SIN,Hong Kong,Singapore,China,Singapore,Cathay Pacific,CX2556,3
+Auckland Airport,Miami International,AKL,MIA,Auckland,Miami,New Zealand,USA,Air New Zealand,NZ4265,22
+Changi,Vienna International,SIN,VIE,Singapore,Vienna,Singapore,Austria,Singapore Airlines,SQ4857,12
+Bole International,Hamad International,ADD,DOH,Addis Ababa,Doha,Ethiopia,Qatar,Ethiopian Airlines,ET2460,3
+El Dorado International,O'Hare International,BOG,ORD,Bogotá,Chicago,Colombia,USA,Avianca,AV9554,3
+Copenhagen Airport,Charles de Gaulle,CPH,CDG,Copenhagen,Paris,Denmark,France,SAS Scandinavian,SK9921,3
+Changi,Beijing Capital International,SIN,PEK,Singapore,Beijing,Singapore,China,Singapore Airlines,SQ5675,3
+O.R. Tambo International,Charles de Gaulle,JNB,CDG,Johannesburg,Paris,South Africa,France,South African Airways,SA4674,3
+Indira Gandhi International,Chhatrapati Shivaji International,DEL,BOM,Delhi,Mumbai,India,India,Air India,AI6733,1.5
+Hamad International,Vienna International,DOH,VIE,Doha,Vienna,Qatar,Austria,Qatar Airways,QR3221,4
+Los Angeles International,San Francisco International,LAX,SFO,Los Angeles,San Francisco,USA,USA,Southwest Airlines,WN3007,1.5
+O.R. Tambo International,Bole International,JNB,ADD,Johannesburg,Addis Ababa,South Africa,Ethiopia,South African Airways,SA5492,4
+Los Angeles International,Cairo International,LAX,CAI,Los Angeles,Cairo,USA,Egypt,Southwest Airlines,WN2179,15
+John F. Kennedy International,Stockholm Arlanda,JFK,ARN,New York,Stockholm,USA,Sweden,Delta Air Lines,DL4188,12
+Copenhagen Airport,Ministro Pistarini International,CPH,EZE,Copenhagen,Buenos Aires,Denmark,Argentina,SAS Scandinavian,SK7810,11
+São Paulo/Guarulhos International,Ministro Pistarini International,GRU,EZE,São Paulo,Buenos Aires,Brazil,Argentina,LATAM Airlines,LA4492,3
+John F. Kennedy International,Amsterdam Airport Schiphol,JFK,AMS,New York,Amsterdam,USA,Netherlands,Delta Air Lines,DL2397,12
+Benito Juárez International,O'Hare International,MEX,ORD,Mexico City,Chicago,Mexico,USA,Aeroméxico,AM6473,3
+Hong Kong International,Changi,HKG,SIN,Hong Kong,Singapore,China,Singapore,Cathay Pacific,CX5881,3
+Suvarnabhumi,Hong Kong International,BKK,HKG,Bangkok,Hong Kong,Thailand,China,Thai Airways,TG3079,4
+São Paulo/Guarulhos International,Ministro Pistarini International,GRU,EZE,São Paulo,Buenos Aires,Brazil,Argentina,LATAM Airlines,LA7114,3
+Hong Kong International,Kuala Lumpur International,HKG,KUL,Hong Kong,Kuala Lumpur,China,Malaysia,Cathay Pacific,CX2504,3
+Auckland Airport,Ministro Pistarini International,AKL,EZE,Auckland,Buenos Aires,New Zealand,Argentina,Air New Zealand,NZ3445,21
+O.R. Tambo International,Adolfo Suárez Madrid–Barajas,JNB,MAD,Johannesburg,Madrid,South Africa,Spain,South African Airways,SA8024,3
+Adolfo Suárez Madrid–Barajas,Charles de Gaulle,MAD,CDG,Madrid,Paris,Spain,France,Iberia,IB8620,3
+Incheon International,Haneda,ICN,HND,Seoul,Tokyo,South Korea,Japan,Korean Air,KE5966,3
+Incheon International,Haneda,ICN,HND,Seoul,Tokyo,South Korea,Japan,Korean Air,KE3317,3
+Copenhagen Airport,Ministro Pistarini International,CPH,EZE,Copenhagen,Buenos Aires,Denmark,Argentina,SAS Scandinavian,SK7218,11
+O.R. Tambo International,Copenhagen Airport,JNB,CPH,Johannesburg,Copenhagen,South Africa,Denmark,South African Airways,SA2287,3
+Amsterdam Airport Schiphol,Charles de Gaulle,AMS,CDG,Amsterdam,Paris,Netherlands,France,KLM Royal Dutch Airlines,KL6096,3
+Incheon International,Haneda,ICN,HND,Seoul,Tokyo,South Korea,Japan,Korean Air,KE6121,3
+Changi,Beijing Capital International,SIN,PEK,Singapore,Beijing,Singapore,China,Singapore Airlines,SQ2653,3
+Changi,Beijing Capital International,SIN,PEK,Singapore,Beijing,Singapore,China,Singapore Airlines,SQ5805,3
+John F. Kennedy International,Hartsfield-Jackson Atlanta,JFK,ATL,New York,Atlanta,USA,USA,American Airlines,AA8399,1.5
+Changi,Haneda,SIN,HND,Singapore,Tokyo,Singapore,Japan,Singapore Airlines,SQ1094,4
+Haneda,Incheon International,HND,ICN,Tokyo,Seoul,Japan,South Korea,All Nippon Airways,NH2176,3
+São Paulo/Guarulhos International,Ministro Pistarini International,GRU,EZE,São Paulo,Buenos Aires,Brazil,Argentina,LATAM Airlines,LA1544,3
+O.R. Tambo International,Charles de Gaulle,JNB,CDG,Johannesburg,Paris,South Africa,France,South African Airways,SA7853,3
+Amsterdam Airport Schiphol,Charles de Gaulle,AMS,CDG,Amsterdam,Paris,Netherlands,France,KLM Royal Dutch Airlines,KL2024,3
+Los Angeles International,San Francisco International,LAX,SFO,Los Angeles,San Francisco,USA,USA,United Airlines,UA5518,1.5
+Toronto Pearson,John F. Kennedy International,YYZ,JFK,Toronto,New York,Canada,USA,Air Canada,AC8831,3
+Benito Juárez International,O'Hare International,MEX,ORD,Mexico City,Chicago,Mexico,USA,Aeroméxico,AM2471,3
+Incheon International,Haneda,ICN,HND,Seoul,Tokyo,South Korea,Japan,Korean Air,KE4306,3
+Leonardo da Vinci International,Charles de Gaulle,FCO,CDG,Rome,Paris,Italy,France,Alitalia,AZ7649,3
+Changi,Beijing Capital International,SIN,PEK,Singapore,Beijing,Singapore,China,Singapore Airlines,SQ4603,3
+John F. Kennedy International,Hartsfield-Jackson Atlanta,JFK,ATL,New York,Atlanta,USA,USA,American Airlines,AA3263,1.5
+Heathrow,Charles de Gaulle,LHR,CDG,London,Paris,UK,France,British Airways,BA1785,4
+Suvarnabhumi,Changi,BKK,SIN,Bangkok,Singapore,Thailand,Singapore,Thai Airways,TG1457,4
+Charles de Gaulle,Frankfurt Airport,CDG,FRA,Paris,Frankfurt,France,Germany,Air France,AF6719,3
+Toronto Pearson,John F. Kennedy International,YYZ,JFK,Toronto,New York,Canada,USA,Air Canada,AC6547,3
+O.R. Tambo International,Hartsfield-Jackson Atlanta,JNB,ATL,Johannesburg,Atlanta,South Africa,USA,South African Airways,SA8676,12
+Hong Kong International,Frankfurt Airport,HKG,FRA,Hong Kong,Frankfurt,China,Germany,Cathay Pacific,CX3985,12
+Changi,Beijing Capital International,SIN,PEK,Singapore,Beijing,Singapore,China,Singapore Airlines,SQ3887,3
+Copenhagen Airport,Vienna International,CPH,VIE,Copenhagen,Vienna,Denmark,Austria,SAS Scandinavian,SK1135,3
+Indira Gandhi International,Chhatrapati Shivaji International,DEL,BOM,Delhi,Mumbai,India,India,Air India,AI2219,1.5
+El Dorado International,Los Angeles International,BOG,LAX,Bogotá,Los Angeles,Colombia,USA,Avianca,AV3679,5
+Los Angeles International,San Francisco International,LAX,SFO,Los Angeles,San Francisco,USA,USA,Southwest Airlines,WN4746,1.5
+Amsterdam Airport Schiphol,Charles de Gaulle,AMS,CDG,Amsterdam,Paris,Netherlands,France,KLM Royal Dutch Airlines,KL3740,3
+Incheon International,Leonardo da Vinci International,ICN,FCO,Seoul,Rome,South Korea,Italy,Korean Air,KE3049,13
+Los Angeles International,San Francisco International,LAX,SFO,Los Angeles,San Francisco,USA,USA,Southwest Airlines,WN4981,1.5
+Hong Kong International,Changi,HKG,SIN,Hong Kong,Singapore,China,Singapore,Cathay Pacific,CX4721,3
+Auckland Airport,Changi,AKL,SIN,Auckland,Singapore,New Zealand,Singapore,Air New Zealand,NZ1302,10
+Incheon International,Haneda,ICN,HND,Seoul,Tokyo,South Korea,Japan,Korean Air,KE2000,3
+Amsterdam Airport Schiphol,Heathrow,AMS,LHR,Amsterdam,London,Netherlands,UK,KLM Royal Dutch Airlines,KL8123,4
+Leonardo da Vinci International,Cairo International,FCO,CAI,Rome,Cairo,Italy,Egypt,Alitalia,AZ6720,3

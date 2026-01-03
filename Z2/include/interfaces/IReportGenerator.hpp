@@ -29,3 +29,4 @@ class IReportGenerator {
 
         virtual void SaveToFile (const std::filesystem::path& filePath) const = 0;
 };
+

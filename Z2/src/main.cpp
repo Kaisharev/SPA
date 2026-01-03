@@ -36,8 +36,8 @@ int main (int argc, char* argv[]) {
 #endif
 
     if (argc < 3) {
-        std::cerr << "Usage: " << argv[0] << " <test_folder_name> <root_node>" << std::endl;
-        std::cerr << "Example: " << argv[0] << " test1 0" << std::endl;
+        std::cerr << "Kako pozvati: " << argv[0] << " <test_folder_name> <root_node>" << std::endl;
+        std::cerr << "Primjer: " << argv[0] << " test1 0" << std::endl;
         return 1;
     }
 
@@ -107,7 +107,7 @@ int main (int argc, char* argv[]) {
         report.SaveToFile (reportFile);
 
     } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what () << std::endl;
+        std::cerr << "Greška: " << e.what () << std::endl;
         return 1;
     }
 

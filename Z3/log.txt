@@ -1,0 +1,281 @@
+ HOME on  D:\..\..\..\..\..\source main 
+# .\main.exe test1 3
+Uneseni testni folder: test1
+Učitano 100 letova iz "D:\\Fakultet\\SPA\\Zadaće\\Z1\\Z3\\data\\test1\\flights.csv"
+Prvi let: Let:  AM5161: MEX -> ORD (3h, Aeroméxico)
+B-stablo kreirano sa t=3
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 1
+
+=== Prikaz stabla ===
+
+=== Hijerarhijski prikaz B-stabla ===
+Nivo 0: [3]
+Nivo 1: [1,3,3] [3,4,12]
+Nivo 2: [1,1] [3,3] [3,3] [3,3] [3,3] [3,3] [4,4,11] [13,15]
+Nivo 3: [1,1,1] [1,1,1] [1,1,1,1] [1,2] [3,3] [3,3,3] [3,3,3] [3,3,3] [3,3,3] [3,3,3] [3,3,3] [3,3,3,3] [3,3,3] [3,3,3] [3,3,3,3] [3,3,3] [3,3,3] [3,3,3,3,4] [4,4] [4,4,4] [5,10] [11,12,12] [12,12,12] [13,13,13] [15,21,22]
+=====================================
+
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 2
+Unesite min i max (odvojene razmakom): 3 5
+Rezultati pretrage opsega [3, 5]:
+
+=== Letovi u opsegu [3, 5] ===
+Let:  SK8133: CPH -> CDG (3h, SAS Scandinavian)
+Let:  ET3606: ADD -> DOH (3h, Ethiopian Airlines)
+Let:  AZ7452: FCO -> FRA (3h, Alitalia)
+Let:  QR4803: DOH -> ADD (3h, Qatar Airways)
+Let:  KE9236: ICN -> HND (3h, Korean Air)
+Let:  SQ9239: SIN -> PEK (3h, Singapore Airlines)
+Let:  LH3045: FRA -> CDG (3h, Lufthansa)
+Let:  AF6606: CDG -> FRA (3h, Air France)
+Let:  NH9502: HND -> ICN (3h, All Nippon Airways)
+Let:  QR2224: DOH -> ADD (3h, Qatar Airways)
+Let:  SA4339: JNB -> CDG (3h, South African Airways)
+Let:  SA8434: JNB -> CDG (3h, South African Airways)
+Let:  AM3850: MEX -> ORD (3h, Aeroméxico)
+Let:  SK4469: CPH -> CDG (3h, SAS Scandinavian)
+Let:  NH4423: HND -> ICN (3h, All Nippon Airways)
+Let:  CX8409: HKG -> SIN (3h, Cathay Pacific)
+Let:  CX2556: HKG -> SIN (3h, Cathay Pacific)
+Let:  AC3020: YYZ -> JFK (3h, Air Canada)
+Let:  LH8174: FRA -> CDG (3h, Lufthansa)
+Let:  AM3850: MEX -> ORD (3h, Aeroméxico)
+Let:  SQ5675: SIN -> PEK (3h, Singapore Airlines)
+Let:  SK9921: CPH -> CDG (3h, SAS Scandinavian)
+Let:  AV9554: BOG -> ORD (3h, Avianca)
+Let:  ET2460: ADD -> DOH (3h, Ethiopian Airlines)
+Let:  CX5881: HKG -> SIN (3h, Cathay Pacific)
+Let:  AM6473: MEX -> ORD (3h, Aeroméxico)
+Let:  LA4492: GRU -> EZE (3h, LATAM Airlines)
+Let:  SA4674: JNB -> CDG (3h, South African Airways)
+Let:  NH2176: HND -> ICN (3h, All Nippon Airways)
+Let:  SA8024: JNB -> MAD (3h, South African Airways)
+Let:  CX2504: HKG -> KUL (3h, Cathay Pacific)
+Let:  LA7114: GRU -> EZE (3h, LATAM Airlines)
+Let:  NH4003: HND -> ICN (3h, All Nippon Airways)
+Let:  SA2287: JNB -> CPH (3h, South African Airways)
+Let:  KE3317: ICN -> HND (3h, Korean Air)
+Let:  KE5966: ICN -> HND (3h, Korean Air)
+Let:  IB8620: MAD -> CDG (3h, Iberia)
+Let:  SQ5805: SIN -> PEK (3h, Singapore Airlines)
+Let:  SQ2653: SIN -> PEK (3h, Singapore Airlines)
+Let:  KE6121: ICN -> HND (3h, Korean Air)
+Let:  KL6096: AMS -> CDG (3h, KLM Royal Dutch Airlines)
+Let:  KL3740: AMS -> CDG (3h, KLM Royal Dutch Airlines)
+Let:  AC8831: YYZ -> JFK (3h, Air Canada)
+Let:  KL2024: AMS -> CDG (3h, KLM Royal Dutch Airlines)
+Let:  SA7853: JNB -> CDG (3h, South African Airways)
+Let:  LA1544: GRU -> EZE (3h, LATAM Airlines)
+Let:  SQ4603: SIN -> PEK (3h, Singapore Airlines)
+Let:  AZ7649: FCO -> CDG (3h, Alitalia)
+Let:  KE4306: ICN -> HND (3h, Korean Air)
+Let:  AM2471: MEX -> ORD (3h, Aeroméxico)
+Let:  SK1135: CPH -> VIE (3h, SAS Scandinavian)
+Let:  SQ3887: SIN -> PEK (3h, Singapore Airlines)
+Let:  AC6547: YYZ -> JFK (3h, Air Canada)
+Let:  AF6719: CDG -> FRA (3h, Air France)
+Let:  AZ6720: FCO -> CAI (3h, Alitalia)
+Let:  KE2000: ICN -> HND (3h, Korean Air)
+Let:  CX4721: HKG -> SIN (3h, Cathay Pacific)
+Let:  AM5161: MEX -> ORD (3h, Aeroméxico)
+Let:  TG3079: BKK -> HKG (4h, Thai Airways)
+Let:  BA5112: LHR -> CDG (4h, British Airways)
+Let:  SA5492: JNB -> ADD (4h, South African Airways)
+Let:  QR3221: DOH -> VIE (4h, Qatar Airways)
+Let:  BA1708: LHR -> CDG (4h, British Airways)
+Let:  KL8123: AMS -> LHR (4h, KLM Royal Dutch Airlines)
+Let:  TG1457: BKK -> SIN (4h, Thai Airways)
+Let:  BA1785: LHR -> CDG (4h, British Airways)
+Let:  SQ1094: SIN -> HND (4h, Singapore Airlines)
+Let:  AV3679: BOG -> LAX (5h, Avianca)
+==========================================
+
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 3
+Unesite K: 6
+
+--- TOP 6 AERODROMA SA NAJVISE LETOVA ---
+1. CDG - Charles de Gaulle - 20 letova
+2. SIN - Changi - 15 letova
+3. ICN - Incheon International - 12 letova
+4. HND - Haneda - 11 letova
+5. JFK - John F. Kennedy International - 10 letova
+6. LAX - Los Angeles International - 9 letova
+
+--- TOP 6 AERODROMA SA NAJMANJE LETOVA ---
+1. MIA - Miami International - 1 letova
+2. YVR - Vancouver International - 1 letova
+3. LIM - Jorge Chávez International - 1 letova
+4. CPT - Cape Town International - 1 letova
+5. ARN - Stockholm Arlanda - 1 letova
+6. SYD - Sydney Airport - 1 letova
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 4
+Unesite IATA kod aerodroma (npr. MEX, JFK, LHR): CDG
+
+--- ODLASCI SA AERODROMA CDG ---
+Let:  AF6719: CDG -> FRA (3h, Air France)
+Let:  AF6606: CDG -> FRA (3h, Air France)
+
+--- DOLASCI NA AERODROM CDG
+Let:  KE6519: ICN -> CDG (13h, Korean Air)
+Let:  BA1785: LHR -> CDG (4h, British Airways)
+Let:  BA1708: LHR -> CDG (4h, British Airways)
+Let:  BA5112: LHR -> CDG (4h, British Airways)
+Let:  AZ7649: FCO -> CDG (3h, Alitalia)
+Let:  SA7853: JNB -> CDG (3h, South African Airways)
+Let:  KL2024: AMS -> CDG (3h, KLM Royal Dutch Airlines)
+Let:  KL3740: AMS -> CDG (3h, KLM Royal Dutch Airlines)
+Let:  KL6096: AMS -> CDG (3h, KLM Royal Dutch Airlines)
+Let:  IB8620: MAD -> CDG (3h, Iberia)
+Let:  SA4674: JNB -> CDG (3h, South African Airways)
+Let:  SK9921: CPH -> CDG (3h, SAS Scandinavian)
+Let:  LH8174: FRA -> CDG (3h, Lufthansa)
+Let:  SK4469: CPH -> CDG (3h, SAS Scandinavian)
+Let:  SA8434: JNB -> CDG (3h, South African Airways)
+Let:  SA4339: JNB -> CDG (3h, South African Airways)
+Let:  LH3045: FRA -> CDG (3h, Lufthansa)
+Let:  SK8133: CPH -> CDG (3h, SAS Scandinavian)
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 5
+Unesite broj leta koji želite da obrišete (npr. EM8650): EM8650
+Let EM8650 obrisan.
+Nepoznata opcija.
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 0
+Izlaz.
+ HOME on  D:\..\..\..\..\..\source main 
+# .\main.exe test2 3
+Uneseni testni folder: test2
+Učitano 50 letova iz "D:\\Fakultet\\SPA\\Zadaće\\Z1\\Z3\\data\\test2\\flights.csv"
+Prvi let: Let:  EM8650: JFK -> DXB (2.1h, Emirates)
+B-stablo kreirano sa t=3
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 1
+
+=== Prikaz stabla ===
+
+=== Hijerarhijski prikaz B-stabla ===
+Nivo 0: [3,7]
+Nivo 1: [1,2,2] [4,5] [7,9,10,11]
+Nivo 2: [0,0,1] [1,1] [2,2,2] [3,3] [3,3,3,4] [5,5,5] [5,6,7,7,7] [7,7,7,7] [7,8,8,9] [9,9,10,10] [10,10,10] [11,11]
+=====================================
+
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 2
+Unesite min i max (odvojene razmakom): 6 8
+Rezultati pretrage opsega [6, 8]:
+
+=== Letovi u opsegu [6, 8] ===
+Let:  AU6666: ZRH -> SJJ (6.8h, Austrian Airlines)
+Let:  LU2036: SJJ -> CTL (7h, Lufthansa)
+Let:  AI9332: VIE -> CTL (7.4h, Air Serbia)
+Let:  AI6459: CTL -> JFK (7.5h, Air Serbia)
+Let:  WI7215: CTL -> SJJ (7.5h, Wizz Air)
+Let:  WI4787: LHR -> JFK (7.5h, Wizz Air)
+Let:  EM8511: IST -> JFK (7.7h, Emirates)
+Let:  TU2700: IST -> DXB (7.7h, Turkish Airlines)
+Let:  AI1677: IST -> DXB (7.9h, Air Serbia)
+Let:  WI2211: VIE -> CTL (7.9h, Wizz Air)
+Let:  TU7779: SJJ -> CTL (7.9h, Turkish Airlines)
+==========================================
+
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 4
+Unesite IATA kod aerodroma (npr. MEX, JFK, LHR): ZRH
+
+--- ODLASCI SA AERODROMA ZRH ---
+Let:  TU8304: ZRH -> CTL (9.2h, Turkish Airlines)
+Let:  AU6666: ZRH -> SJJ (6.8h, Austrian Airlines)
+Let:  WI4059: ZRH -> JFK (5.7h, Wizz Air)
+
+--- DOLASCI NA AERODROM ZRH
+Let:  AU7091: JFK -> ZRH (3.7h, Austrian Airlines)
+Let:  RY3231: VIE -> ZRH (2.9h, Ryanair)
+Let:  EM3683: JFK -> ZRH (1.7h, Emirates)
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 5
+Unesite broj leta koji želite da obrišete (npr. EM8650): CR7862
+Let CR7862 obrisan.
+Nepoznata opcija.
+
+=== Glavni meni ===
+1) Prikaz stabla (hierarhijski)
+2) Pretraga opsega (min max)
+3) Prikaži top K aerodroma
+4) Prikaži letove po IATA kodu
+5) Brisanje leta po broju
+0) Izlaz
+Izaberite opciju: 0

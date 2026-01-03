@@ -1,0 +1,51 @@
+departureAirport,arrivalAirport,departureCode,arrivalCode,departureCity,arrivalCity,departureCountry,arrivalCountry,airlineName,flightNumber,durationInHours
+John F. Kennedy International,Dubai International,JFK,DXB,New York,Dubai,USA,UAE,Emirates,EM8650,2.1
+Dubai International,London Heathrow,DXB,LHR,Dubai,London,UAE,United Kingdom,Emirates,EM7446,3.3
+London Heathrow,Aerodrom u Čitluku,LHR,CTL,London,Čitluk,United Kingdom,Bosnia and Herzegovina,Ryanair,RY5014,10.3
+Sarajevo International,Aerodrom u Čitluku,SJJ,CTL,Sarajevo,Čitluk,Bosnia and Herzegovina,Bosnia and Herzegovina,Turkish Airlines,TU4535,11.3
+Dubai International,Vienna International,DXB,VIE,Dubai,Vienna,UAE,Austria,Air Serbia,AI6507,3.2
+John F. Kennedy International,Aerodrom u Čitluku,JFK,CTL,New York,Čitluk,USA,Bosnia and Herzegovina,Emirates,EM1041,9.3
+Zurich Airport,John F. Kennedy International,ZRH,JFK,Zurich,New York,Switzerland,USA,Wizz Air,WI4059,5.7
+Vienna International,Zurich Airport,VIE,ZRH,Vienna,Zurich,Austria,Switzerland,Ryanair,RY3231,2.9
+Aerodrom u Čitluku,Vienna International,CTL,VIE,Čitluk,Vienna,Bosnia and Herzegovina,Austria,Croatia Airlines,CR7862,3.2
+Aerodrom u Čitluku,Sarajevo International,CTL,SJJ,Čitluk,Sarajevo,Bosnia and Herzegovina,Bosnia and Herzegovina,Wizz Air,WI7215,7.5
+Aerodrom u Čitluku,London Heathrow,CTL,LHR,Čitluk,London,Bosnia and Herzegovina,United Kingdom,Ryanair,RY4329,2.5
+John F. Kennedy International,Zurich Airport,JFK,ZRH,New York,Zurich,USA,Switzerland,Emirates,EM3683,1.7
+London Heathrow,Istanbul Airport,LHR,IST,London,Istanbul,United Kingdom,Turkey,Emirates,EM8393,5.0
+John F. Kennedy International,Frankfurt Airport,JFK,FRA,New York,Frankfurt,USA,Germany,Turkish Airlines,TU6753,0.7
+John F. Kennedy International,Aerodrom u Čitluku,JFK,CTL,New York,Čitluk,USA,Bosnia and Herzegovina,Austrian Airlines,AU4703,5.9
+Dubai International,John F. Kennedy International,DXB,JFK,Dubai,New York,UAE,USA,Austrian Airlines,AU4293,4.8
+Istanbul Airport,Dubai International,IST,DXB,Istanbul,Dubai,Turkey,UAE,Turkish Airlines,TU2700,7.7
+Vienna International,John F. Kennedy International,VIE,JFK,Vienna,New York,Austria,USA,Turkish Airlines,TU6083,5.5
+Aerodrom u Čitluku,Sarajevo International,CTL,SJJ,Čitluk,Sarajevo,Bosnia and Herzegovina,Bosnia and Herzegovina,Austrian Airlines,AU5091,4.1
+Aerodrom u Čitluku,John F. Kennedy International,CTL,JFK,Čitluk,New York,Bosnia and Herzegovina,USA,Air Serbia,AI6459,7.5
+London Heathrow,Frankfurt Airport,LHR,FRA,London,Frankfurt,United Kingdom,Germany,Turkish Airlines,TU9495,1.6
+Aerodrom u Čitluku,Frankfurt Airport,CTL,FRA,Čitluk,Frankfurt,Bosnia and Herzegovina,Germany,Air Serbia,AI8550,8.8
+Dubai International,Frankfurt Airport,DXB,FRA,Dubai,Frankfurt,UAE,Germany,Austrian Airlines,AU7173,0.7
+Dubai International,Aerodrom u Čitluku,DXB,CTL,Dubai,Čitluk,UAE,Bosnia and Herzegovina,Lufthansa,LU6621,9.4
+Zurich Airport,Aerodrom u Čitluku,ZRH,CTL,Zurich,Čitluk,Switzerland,Bosnia and Herzegovina,Turkish Airlines,TU8304,9.2
+Vienna International,Aerodrom u Čitluku,VIE,CTL,Vienna,Čitluk,Austria,Bosnia and Herzegovina,Wizz Air,WI2211,7.9
+Sarajevo International,Dubai International,SJJ,DXB,Sarajevo,Dubai,Bosnia and Herzegovina,UAE,Wizz Air,WI2142,11.4
+London Heathrow,John F. Kennedy International,LHR,JFK,London,New York,United Kingdom,USA,Wizz Air,WI4787,7.5
+Aerodrom u Čitluku,Vienna International,CTL,VIE,Čitluk,Vienna,Bosnia and Herzegovina,Austria,Croatia Airlines,CR1211,3.7
+Istanbul Airport,Dubai International,IST,DXB,Istanbul,Dubai,Turkey,UAE,Air Serbia,AI1677,7.9
+John F. Kennedy International,Sarajevo International,JFK,SJJ,New York,Sarajevo,USA,Bosnia and Herzegovina,Croatia Airlines,CR8505,10.7
+London Heathrow,Aerodrom u Čitluku,LHR,CTL,London,Čitluk,United Kingdom,Bosnia and Herzegovina,Croatia Airlines,CR4557,2.6
+Zurich Airport,Sarajevo International,ZRH,SJJ,Zurich,Sarajevo,Switzerland,Bosnia and Herzegovina,Austrian Airlines,AU6666,6.8
+Aerodrom u Čitluku,Vienna International,CTL,VIE,Čitluk,Vienna,Bosnia and Herzegovina,Austria,Turkish Airlines,TU7717,3.7
+Vienna International,Dubai International,VIE,DXB,Vienna,Dubai,Austria,UAE,Air Serbia,AI4296,9.9
+Sarajevo International,Frankfurt Airport,SJJ,FRA,Sarajevo,Frankfurt,Bosnia and Herzegovina,Germany,Air Serbia,AI2038,10.9
+Sarajevo International,Aerodrom u Čitluku,SJJ,CTL,Sarajevo,Čitluk,Bosnia and Herzegovina,Bosnia and Herzegovina,Turkish Airlines,TU7779,7.9
+Aerodrom u Čitluku,London Heathrow,CTL,LHR,Čitluk,London,Bosnia and Herzegovina,United Kingdom,Ryanair,RY1206,1.8
+Sarajevo International,Aerodrom u Čitluku,SJJ,CTL,Sarajevo,Čitluk,Bosnia and Herzegovina,Bosnia and Herzegovina,Lufthansa,LU2036,7.0
+John F. Kennedy International,Zurich Airport,JFK,ZRH,New York,Zurich,USA,Switzerland,Austrian Airlines,AU7091,3.7
+Istanbul Airport,John F. Kennedy International,IST,JFK,Istanbul,New York,Turkey,USA,Emirates,EM8511,7.7
+Vienna International,Istanbul Airport,VIE,IST,Vienna,Istanbul,Austria,Turkey,Ryanair,RY9076,1.9
+Aerodrom u Čitluku,John F. Kennedy International,CTL,JFK,Čitluk,New York,Bosnia and Herzegovina,USA,Lufthansa,LU2258,10.0
+Aerodrom u Čitluku,London Heathrow,CTL,LHR,Čitluk,London,Bosnia and Herzegovina,United Kingdom,Ryanair,RY9772,5.0
+Dubai International,Sarajevo International,DXB,SJJ,Dubai,Sarajevo,UAE,Bosnia and Herzegovina,Ryanair,RY9288,8.4
+London Heathrow,Vienna International,LHR,VIE,London,Vienna,United Kingdom,Austria,Ryanair,RY8663,10.7
+Frankfurt Airport,London Heathrow,FRA,LHR,Frankfurt,London,Germany,United Kingdom,Emirates,EM1877,2.2
+Vienna International,Aerodrom u Čitluku,VIE,CTL,Vienna,Čitluk,Austria,Bosnia and Herzegovina,Air Serbia,AI9332,7.4
+Aerodrom u Čitluku,Frankfurt Airport,CTL,FRA,Čitluk,Frankfurt,Bosnia and Herzegovina,Germany,Air Serbia,AI7790,11.3
+Vienna International,John F. Kennedy International,VIE,JFK,Vienna,New York,Austria,USA,Austrian Airlines,AU2014,10.7
